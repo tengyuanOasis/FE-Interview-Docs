@@ -4,13 +4,12 @@ coverWidth: 1200
 coverHeight: 750
 categories: Ajax
 tags: [Ajax,Axios]
-top:
 cover:  https://images.unsplash.com/photo-1597331788728-8d1850a02caa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjg5ODI0fQ&w=750&dpi=2
-------
+---
 <!--more-->
 
-
 ### 01-新建src/api文件夹
+
 ```
 api
  - ajax.js
@@ -55,7 +54,7 @@ export default function ajax(url='',params={},type='GET'){
 
 ```
 ### 03-新建index.js文件
-```
+```js
 import ajax from './ajax'
 
 //发送请求
@@ -63,6 +62,7 @@ export const getPhoneCode = (phone)=>ajax('/api/getPhoneCode',{phone});
 
 ```
 ### 04-api调用
-```
+```js
 import { xxxxx } from 'api/index.vue (文件路径)'
 ```
+

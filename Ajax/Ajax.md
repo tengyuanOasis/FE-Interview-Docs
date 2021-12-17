@@ -27,7 +27,7 @@ AJAX复习一下~
 
 ###### 1/创建Ajax核心对象XMLHttpRequest
 
-```
+```js
 var xhr = null ;
 if(window.XMLHttpRequest){
 	xhr = new XMLHttpRequest()
@@ -38,7 +38,7 @@ if(window.XMLHttpRequest){
 
 ###### 2/向服务器发送请求
 
-```
+```js
 xhr.open(method,url,async:boolean)
 xhr.send(string); //POST请求时候采用string参数,否则不需要带参数
 ```
@@ -47,7 +47,7 @@ xhr.send(string); //POST请求时候采用string参数,否则不需要带参数
 - **url:**请求链接(位置)
 - **async:**是否异步
 
-```
+```js
 xhr.open("POST","test.html",true);  
 xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");  
 xhr.send("fname=Henry&lname=Ford");  //post请求参数放在send里面，即请求体
@@ -60,20 +60,20 @@ xhr.send("fname=Henry&lname=Ford");  //post请求参数放在send里面，即请
 
 👹同步处理数据
 
-```
-1. xhr.open("GET","info.txt",false);  
-2. xhr.send();  
-3. document.getElementById("myDiv").innerHTML=xhr.responseText; //获取数据直接显示在页面上
+```js
+xhr.open("GET","info.txt",false);  
+xhr.send();  
+document.getElementById("myDiv").innerHTML=xhr.responseText; //获取数据直接显示在页面上
 ```
 
 👺异步处理数据(要在请求状态改变事件中处理。)
 
-```
-1. xhr.onreadystatechange=function()  { 
-2.    if (xhr.readyState==4 &&xhr.status==200)  { 
-3.       document.getElementById("myDiv").innerHTML=xhr.responseText;  
-4.      }
-5.    } 
+```js
+ xhr.onreadystatechange = function () {
+     if (xhr.readyState == 4 && xhr.status == 200) {
+         document.getElementById("myDiv").innerHTML = xhr.responseText;
+     }
+ }
 ```
 
 ###### 4/什么是readyState?
@@ -94,7 +94,7 @@ readyState是XMLHttpRequest对象的一个属性,用来表示当前XMLHttpReques
 
 ##### 04/AJAX代码
 
-```
+```js
 function verificationParams(requestInfo) {
 	//地址不能为空
 	if (!requestInfo.url) {

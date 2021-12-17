@@ -7,7 +7,7 @@ tags: [盒模型,BFC,Css]
 top:
 cover: https://drscdn.500px.org/photo/178844193/h%3D1080/v2?sig=4684395e8888efec23951265e1383ddde8e80361bb60cf3ee35cab3d35bc765b
 ---
->	关于盒模型的一些总结
+>关于盒模型的一些总结
 
 <!--more-->
 #### 盒模型

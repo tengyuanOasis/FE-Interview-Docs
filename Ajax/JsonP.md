@@ -42,7 +42,5 @@ JSONP及其原理
 - 服务器获取容器
 - 将内容填充进容器
 
-##### 4、[代码实现]:https://github.com/JuntengMa/JavaScript/tree/master/JsonP 
-
 
 

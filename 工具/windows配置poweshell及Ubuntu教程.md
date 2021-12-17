@@ -46,27 +46,31 @@
 2. 1. **安装,基础配置** https://blog.csdn.net/qq_34160841/article/details/104838269
    2. **显示git分支：**https://zhuanlan.zhihu.com/p/133291342
 
-**- 修改bashrc文件（ ）**                 ![img](https://gitee.com/JuntengMa/imgae/raw/master/pLuScGYX10Za2kKyP3Lm4w)        
+**- 修改bashrc文件（ ）**                  ![img](https://gitee.com/JuntengMa/imgae/raw/master/pLuScGYX10Za2kKyP3Lm4w)        
 
-**-** 看文档直接拉到最下面，从这里开始看就行，直接ctrl +c  ctrl+v把代码粘贴进去即可，然后保存并重启
+**-** 直接拖到文件最后，把下面代码贴进去保存并重启（如果没有显示项目git分支，找一下这个文件里面有没有跟下面差不多的代码，删掉即可）
 
-​                 ![img](https://docimg2.docs.qq.com/image/y_Nsc-mXv9UAs9cnD4eg8Q?w=1153&h=959)        
+```shell
+# 显示git分支
 
+git_branch()
+{
+   branch=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
+   if [ "${branch}" != "" ]
+   then
+       if [ "${branch}" = "(no branch)" ]
+       then
+           branch="(`git rev-parse --short HEAD`...)"
+       fi
+       echo "($branch)"
+   fi
+}
 
-
-
-
-
-
-
-
-
+PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W$(git_branch)\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W$(git_branch)\[\033[00m\]\$ '
+```
 
 **踩坑日记**
-
-
-
-
 
 ```
 Cloning into 'alessandrococco.gitlab.io'
@@ -74,35 +78,19 @@ error: chmod on /mnt/c/Users/alessandro/Projects/alessandrococco.gitlab.io/.git/
 fatal: could not set 'core.filemode' to 'false'
 ```
 
-
-
-
-
 我刚刚在我刚格式化的笔记本电脑上重新安装了Ubuntu WSL。一切似乎都正常工作，但我在克隆我的 git 存储库之一时遇到了一个烦人的问题：
 
 这里的问题是 的内容
-
-
 
 ```
 /mnt/c
 ```
 
-
-
-
-
 位于 NTFS 分区上，因此
-
-
 
 ```
 chmod
 ```
-
-
-
-
 
 不起作用。
 
@@ -110,67 +98,35 @@ chmod
 
 启动 Ubuntu WSL
 
-
-
-
-
 ```
 /etc/wsl.conf
 ```
-
-
-
-
 
 如果文件不存在则创建
 
 打开文件（例如：）
 
-
-
 ```
 nano /etc/wsl.conf
 ```
 
-
-
-
-
 并添加以下行：
-
-
 
 ```
 [automount]
 options = "metadata"
 ```
 
-
-
-
-
 保存文件并关闭
-
-
 
 ```
 wsl --shutdown
 ```
 
-
-
-
-
 从PowerShell启动的 WSL，重新启动 Ubuntu WSL
-
-
 
 ```
 metadata
 ```
-
-
-
-
 
 选项允许 Windows 支持Linux 系统权限：现在所有chmod、chown相关的东西都可以正常工作！

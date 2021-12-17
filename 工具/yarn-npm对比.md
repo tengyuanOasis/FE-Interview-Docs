@@ -25,3 +25,4 @@ cover: https://cdn.jsdelivr.net/gh/JuntengMa/Images@1.3/blog/cover/3.jpg
 | 卸载           | npm uninstall [–save/–save-dev]    |    yarn remove xx     |
 | 清除缓存       | npm cache clean                    |   yarn cache clean    |
 | 重装           | rm -rf node_modules && npm install |     yarn upgrade      |
+
