@@ -1,44 +1,39 @@
----
-cover: 'https://source.unsplash.com/user/erondu/1440x960'
-coverWidth: 1200
-coverHeight: 750
-date: 2020-11-01
-title: JavaScript基础知识综合
-categories: JavaScript
-tags: JavaScript
-top: 888888
-permalink:
----
-
-> <h4> 
-> 整理一些js基础知识点和总结...
-> </h4>
+# JavaScript基础
 
 [TOC]
 
 <!--more-->
 
-#### 01、	JS 数据类型(6+1)
+#### 01、	JS 数据类型(7+1)
 
 - **基本数据类型:**
 
-  > - **Undefined**： Undefined 类型表示未定义，任何变量在赋值前是 Undefined 类型、值为 undefined。
-  > - **Null**：空对象指针，故typeof null会返回object，Null 表示的是：“定义了但是为空”，所以，在实际编程时，一般把变量赋值为 null。
-  > - **Boolean**: true / false。
-  > - **Number**
+  > 1. **Undefined**： 
+  >    - Undefined 类型表示未定义，任何变量在赋值前是 Undefined 类型、值为 undefined。
+  > 2. **Null**
+  >    - 空对象指针，故typeof null会返回object，Null 表示的是：“==定义了但是为空==”，所以，在实际编程时，一般把变量赋值为 null。
+  > 3. **Boolean** 
+  >    - true / false。
+  > 4. **Number**
   >   - 浮点数(demo： 数值必须有小数的数，1.1；0.1等)
   >   - 数值范围[Number.MIN_VALUE,Number.MAX_VALUE]
   >   - NAN(not a number)
   >   - Number 类型中有效的整数范围是 -0x1fffffffffffff 至 0x1fffffffffffff，所以 Number 无法精确表示此范围外的整数。
-  >   - 浮点数的定义，非整数的 Number 类型无法用 `==`（ `=== `也不行） 来比较。 即 ( 0.1+0.2 ==0.3  、、false)
-  > - **String**: String 用于表示文本数据。String 有最大长度是 2^53 - 1，因为 String 的意义并非“字符串”，而是字符串的 UTF16 编码，我们字符串的操作 charAt、charCodeAt、length 等方法针对的都是 UTF16 编码。所以，字符串的最大长度，实际上是受字符串的编码长度影响的。
-  > - **Symbol**:  Symbol是 ES6 中引入的新类型，它是一切非字符串的对象 key 的集合，在 ES6 规范中，整个对象系统被用 Symbol 重塑。
+  >   - 浮点数的定义，非整数的 Number 类型无法用 `==`（ `=== `也不行） 来比较。 即 ( 0.1+0.2 ==0.3  ==>false)
+  > 5. **String**: 
+  >    - String 用于表示文本数据。String 有最大长度是 2^53 - 1，因为 String 的意义并非“字符串”，而是字符串的 UTF16 编码，我们字符串的操作 charAt、charCodeAt、length 等方法针对的都是 UTF16 编码。所以，字符串的最大长度，实际上是受字符串的编码长度影响的。
+  > 6. **Symbol**:  
+  >    - Symbol是 ES6 中引入的新类型，它是一切非字符串的对象 key 的集合，在 ES6 规范中，整个对象系统被用 Symbol 重塑。
+  > 7. **bigInt**
+  >    - **`BigInt`** 是一种内置对象，它提供了一种方法来表示大于 `253 - 1` 的整数。这原本是 Javascript中可以用 [`Number`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number) 表示的最大数字。**`BigInt`** 可以表示任意大的整数。
+  >    - 不能用于 [`Math`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math) 对象中的方法；
+  >    - 不能和任何 [`Number`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number) 实例混合运算，两者必须转换成同一种类型。
 
 - **引用数据类型:**
 
   引用数据类型指的是 Object类型,其他如 Array,Date 等数据类型都可以理解为 Object 的子类
 
-  ```
+  ```js
   Object =  [
      Array,
      Date,
@@ -49,49 +44,63 @@ permalink:
 
 - **基本数据类型和引用数据类型区别:**
 
-  - 基本数据类型在内存中占固定大小的空间,因此被保存在栈中
+  - 基本数据类型在内存中占固定大小的空间 , 因此被保存在栈中
   - 引用类型值是对象，保存在 **堆内存** 中。包含引用类型值的变量实际包含并非对象本身，而是指向该对象的指针。一个变量从另一个变量复制引用类型的值时，复制的也是指向该对象的指针。
 
 - **数据类型检测方法**
+  
   - typeof: 直接返回数据类型字段，但是无法判断数组、null、对象(均返回 object)
-  - instanceof: 判断某个实例是不是属于原型
-  - Object.prototype.toString.call()
-  - Object.prototype.toString.call()二次封装
+  
+  - [instanceof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof): 判断某个实例是不是属于原型,无法判断基本数据类型，对于引用类型数据，返回其其对应类型。
+  - `Object.prototype.toString.call()`
+  
+    |                        | typeof      | instanceof                       | Object.prototype.toString.call() |
+    | ---------------------- | ----------- | -------------------------------- | -------------------------------- |
+    | var test = 'kangkang'; | `string`    | test instanceof String `//false` | `[object String]`                |
+    | var test = 123;        | `number`    | test instanceof Number`//false`  | `[object Number]`                |
+    | var test = true;       | `boolean`   | test instanceof Boolean`//false` | `[object Boolean]`               |
+    | var test = undefined;  | `undefined` | test instanceof Object `//false` | `[object Undefined]`             |
+    | var test = null;       | `object`    | test instanceof Object`//false`  | `[object Null]`                  |
+    | var test = {};         | `object`    | test instanceof Object`//true`   | `[object Object]`                |
+    | var test(){ };         | `function`  | test instanceof Object`//true`   | `[object Function]`              |
 
 #### 02 、什么是堆/栈?
 
-```
-堆栈概念存在于数据结构和操作系统内存中
-- 在数据结构中:
-  - 栈中的数据存取方式为先进后出
-  - 堆是一个优先队列,按照优先级来进行排序的,优先级可以按照大小来规定
-- 操作系统中 ,内存被分为栈区和堆区:
-  - 栈区的内存由编译器自动分配释放,存放函数的参数值,局部变量值等
-	- 堆内存一般由程序员释放,若没有手动释放则程序结束时由垃圾回收机制回收
-```
+> 堆栈概念存在于数据结构和操作系统内存中
+>
+> 👉栈
+>
+> - 栈内存的简称，系统自动分配相对**固定大小**的内存空间，并由系统**自动释放**。
+> - 栈内存特点，数据一执行完毕，变量会立即释放，节约内存空间。
+> - 栈中的数据存取方式为线性结构，**后进先出**，便于管理。
+> - 栈区内存保存变量标识符
+> - **对于栈,只允许在尾部删除**,即后进先出
+>
+> 👉堆
+>
+> - 堆内存的简称，**动态分配内存**，内存大小不一，**不是自动释放**。
+> - 队列优先 , **先进先出**，方便存储和开辟内存空间。
+> - 堆内存存储对象的地址
+> - **对于队列,只允许在头部删除,后端插入**即先进先出 
 
 #### 03 、 什么是 JavaSctipt 垃圾回收机制?
 
 - **为什么要垃圾回收?**
 
-  ```html
-  随着前端业务需求的不断增多，相比以前，我们会占用更多的内存。
-  但是内存并不是无限的，我们需要垃圾回收机制去处理那些我们不再需要的变量、对象
-  ```
-
+  > 随着前端业务需求的不断增多js会占用越来越多的内存。
+  > 但是内存并不是无限的，故**需要垃圾回收机制去处理那些我们不再需要的变量、对象**
+  
 - **垃圾回收机制的特点:**
 
-  垃圾回收机制会定期对那些我们不再使用的变量、对象所占用的内存释放
+  垃圾回收机制会==定期==对那些我们不再使用的变量、对象所占用的内存释放
 
-  ```
-  原理:
-  	-	找出那些不再使用的变量，然后释放其占用的内存。
-  	-	垃圾收集器会按照固定的时间间隔(或预定的收集时间)周期性地执行此操作。
-  ```
+  > 原理:
+  >  -	找出那些不再使用的变量，然后释放其占用的内存。
+  >  -	垃圾收集器会按照固定的时间间隔(或预定的收集时间)周期性地执行此操作。
 
 - **垃圾回收的方式有哪些?**
 
-  - 标记清除
+  - **标记清除**
 
     - 当变量进入环境时,就将其标记为"进入环境",此时"进入环境"的变量是不可以被回收的"
 
@@ -107,7 +116,7 @@ permalink:
       func() // 函数执行结束，a b 被标记 离开环境，被回收
       ```
 
-  - 引用计数
+  - **引用计数**
 
     - 统计引用类型变量声明后被引用的次数，当次数为 0 时，该变量将被回收
 
@@ -148,7 +157,7 @@ permalink:
 
 当对象 1 中的某个属性指向对象 2，对象 2 中的某个属性指向对象 1 就会出现循环引用(最简单的例子)
 
-```
+```js
   function circularReference() {
       let obj1 = { };
       let obj2 = { };
@@ -161,25 +170,23 @@ permalink:
 
 - 什么是内存泄露?
 
-  ```
-  程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。
-  对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。
-  否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。
-  不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。
-  ```
-
+  > 程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。
+  > 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。
+  > 否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。
+  > 不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。
+  
 - 常见的内存泄露有哪些?
 
-  - 全局变量(在非严格模式下当引用未声明的变量时，会在全局对象中创建一个新变量。)
-  - 被遗忘的定时器和回调函数
-
-  - DOM 引用
-
-  - 闭包
+  > - 全局变量(在非严格模式下当引用未声明的变量时，会在全局对象中创建一个新变量。)
+  > - 被遗忘的定时器和回调函数
+  >
+  > - DOM 引用
+  >
+  > - 闭包
 
 #### 06 、 JavaScript 可执行上下文
 
-<a href="/2020/11/03/JavaScript/03%20-%20JavaScript-作用域&可执行上下文/" target="_blank"><<JavaScript 可执行上下文>></a>
+> 
 
 #### 07 、 JavaScript 在浏览器中如何执行的
 

@@ -26,16 +26,16 @@ https://juejin.im/post/6844903929705136141
 
 浅拷贝只拷贝一层属性,无法拷贝引用数据类型
 
-- `Object.assign({},obj)`浅拷贝object
+- `Object.assign({ },obj)`浅拷贝object
 - `newobj = {...obj2}`  展开运算符浅拷贝
 - `Object.fromEntries( Object.entriens(obj) ) `通过生成迭代器,在通过迭代器生成对象
 - `Object.create({},Object.getOwnPropertyDescriptors(obj))`
 
 **简单浅拷贝:**
 
-```
+```js
 function clone(target){
-	let cloneTarget={};
+	let cloneTarget= { };
 	for(let key in target){
 		cloneTarget[key] = target[key]
 	}
@@ -56,10 +56,12 @@ function clone(target){
 
 简单深拷贝(可以处理**原始数据类型 + Object**):
 
+- 通过递归调用smpleDeepCopy，拷贝对象
+
 - 如果是原始类型，无需继续拷贝，直接返回
 - 如果是引用类型，创建一个新的对象，遍历需要克隆的对象，将需要克隆对象的属性执行深拷贝后依次添加到新对象上。
 
-```
+```js
 function smpleDeepCopy(target) {
   let type = typeof target
   if (type === "object") {
@@ -72,5 +74,4 @@ function smpleDeepCopy(target) {
   return target
 }
 ```
-
 

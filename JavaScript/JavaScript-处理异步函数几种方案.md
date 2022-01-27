@@ -9,12 +9,6 @@ tags: JavaScript
 top:
 permalink:
 ---
-> <h4> 
->  for-in & for-of的区别 和 map-for & Each区别
-> </h4>
-
-<!--more-->
-
 # JS处理异步函数几种方案
 
 #### 1.回调函数
@@ -25,7 +19,7 @@ permalink:
 function f1(callBack){
     console.log("hello")
     let data = "world"
-	callBack(data)
+	  callBack(data)
 }
 f1((data)=>console.log(data))
 // hello
@@ -109,6 +103,7 @@ getData('x',()=>{
   };
   //使用
   let url = "https://imgcache.qq.com/wss/security//ssl/build/ssl-444feca18a7857546ff9b39bbc95a17c.js";
+  
   (async() => {
       let {
           err,
@@ -119,21 +114,4 @@ getData('x',()=>{
   })()
   ```
 
-
-#### 3.事件绑定
-
-事件绑定的方法有三种
-
-一，事件监听，
-二，对象.on方法，
-三，直接在行内写
-事件监听有两种方法，
-
-> - addlisenerevent
-> - attachevent
-
-两种事件监听的区别:
-addeventlistener参数个数一般是三个，参数书写（事件类型）不写on执行顺序为：顺序注册倒序执行，兼容非IE7.8，最后一个参数是TRUE或FALSE，TRUE为捕获，FALSE为冒泡，默认FALSE
-attachevent参数个数为两个，参数书写不写on，执行顺序：顺序注册倒序执行，兼容ie78
-
-#### 4.Generator函数	
+#### 

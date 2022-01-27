@@ -2,8 +2,8 @@
 
 > Vue是一套用于构建用户界面的**渐进式框架**
 >
-> 渐进式框架：Vue.js只提供了vue-cli生态中最核心的组件系统和双向数据绑定，不需要一次搞明白整个Vue生态，
-
+> 渐进式框架：Vue.js!只提供了vue-cli生态中最核心的组件系统和双向数据绑定，不需要一次搞明白整个Vue生态，
+> [](https://www.google.com.tw/url?sa=i&url=https%3A%2F%2Fitaigi.tw%2Fk%2F%25E7%25A8%258D%25E7%25AD%2589%25E4%25B8%2580%25E4%25B8%258B%2F&psig=AOvVaw3v28_E8lnjlEMSY6jmTrxg&ust=1641886544958000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNCv05TWpvUCFQAAAAAdAAAAABAD)
 ##### 2、Vue优缺点
 
 > 优点：渐进式，组件化，轻量级，虚拟dom，响应式，单页面路由，数据与视图分开
@@ -25,9 +25,9 @@
 
 > https://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
 
-##### 5、
+##### 5、Vue中当前组件所有属性快速传递给子组件
 
-> 
+> v-bind
 
 ##### 6、Vue修饰符
 
@@ -43,22 +43,19 @@
 >
 > -	子组件用props接收
 > -	[provide-inject传递](https://cn.vuejs.org/v2/api/#provide-inject)
->
-> ------
+
 >
 > 2、子传父： 
 >
 > -	通过`this.$emit(‘xxxxx’,paload)`
 > -	$refs 获取组件实例
->
-> ------
+
 >
 > 3、兄弟组件：
 >
 > -	eventbus处理
 > -	通过公共上层组件传递
->
-> ------------
+
 >
 > 4、使用Vuex全局状态管理
 >
@@ -327,15 +324,17 @@ computed: {
 
 ##### 26、.sync用法
 
+> # parent 👇
+
 ```vue
-# parent
+
 <dialog :visible.sync="dialogVisible" />
 ```
 
-```vue
-# dialog
-<el-dialog title="xxxx" :visible="visible" @close="close" />
+> # child 👇
 
+```vue
+<el-dialog title="xxxx" :visible="visible" @close="close" />
 close() {
 	this.$emit("update:visible", false);
 },
@@ -526,3 +525,63 @@ function proxy(object, sourceKey, key) {
 https://juejin.cn/post/7023197006998978597#heading-73
 
 https://juejin.cn/post/6984210440276410399#heading-55
+
+
+
+##### 36、Vue+elememt table表单校验
+
+```vue
+      <el-form ref="work_plan_form" :model="dataInfo" :rules="rules">
+        <el-table :data="dataInfo.workPlan" style="width: 100%">
+          
+          <el-table-column label="序号" type="index" align="center" />
+          
+          <el-table-column label="班次" align="center" prop="name">
+            <template slot-scope="{ row, $index }">
+              <el-form-item :prop="`workPlan.${$index}.name`" :rules="rules.name">
+                <el-input v-model="row.name" placeholder="" maxlength="20"></el-input>
+              </el-form-item>
+            </template>
+          </el-table-column>
+
+          <el-table-column label="服务时间" align="center" prop="serviceTime">
+            <template slot-scope="{ row, $index }">
+              <el-form-item
+                :prop="`workPlan.${$index}.serviceTime`"
+                :rules="rules.serviceTime"
+              >
+                <el-time-picker
+                  @change="(val) => serviceTimeChange(val, row)"
+                  style="width: 400px"
+                  value-format="HH:mm"
+                  is-range
+                  v-model="row.serviceTime"
+                  range-separator="至"
+                  start-placeholder="开始时间"
+                  end-placeholder="结束时间"
+                  placeholder="选择时间范围"
+                />
+              </el-form-item>
+            </template>
+          </el-table-column>
+
+          <el-table-column label="顾问" align="center" prop="adviser">
+            <template slot-scope="{ row, $index }">
+              <el-form-item :prop="`workPlan.${$index}.adviser`" :rules="rules.adviser">
+                <el-select v-model="row.adviser">
+                  <el-option
+                    v-for="item in []"
+                    :key="item.dictValue"
+                    :label="item.dictLabel"
+                    :value="item.dictValue"
+                  />
+                </el-select>
+              </el-form-item>
+            </template>
+          </el-table-column>
+          
+        </el-table>
+      </el-form>
+
+```
+

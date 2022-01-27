@@ -1,6 +1,27 @@
-# Blogs
+### Vue模板编译
 
-总结的一些文档
+01、`new Vue()`
+
+```js
+const app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        name: 'Mike',
+        hobby: ['swimming', 'travel']
+      }
+    },
+    methods: {
+      changeHobby() {
+        this.hobby.push('coding')
+      }
+    },
+  })
+```
+
+01、`$mount `
+
+用于编译temple并渲染到页面
 
 ```js
 Vue.prototype.$mount = function (
@@ -19,8 +40,8 @@ Vue.prototype.$mount = function (
       /*处理模板template，编译成render函数，render不存在的时候才会编译template，否则优先使用render*/
     let template = options.template;
     /*template存在的时候取template，不存在的时候取el的outerHTML*/
-    if (template) {  
-      /*当template是字符串的时候, 如:#app */ 
+    if (template) {
+      /*当template是字符串的时候, 如:#app */
       if (typeof template === "string") {
         if (template.charAt(0) === "#") {
           template = idToTemplate(template);
@@ -79,3 +100,8 @@ Vue.prototype.$mount = function (
   return mount.call(this, el, hydrating);
 };
 ```
+
+03、`compileToFunctions`用于将`template`转化为`ast`语法树，并return出 render函数和带有缓存的renderFunc
+
+
+
