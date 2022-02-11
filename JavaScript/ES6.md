@@ -131,3 +131,6 @@ const array = Array.from(items);
 
 #### 5、Map
 
+用于创建哈希表
+
+map.get

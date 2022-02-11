@@ -1,32 +1,19 @@
----
-coverWidth: 1200
-coverHeight: 750
-title: Promise
-date: 2020-11-15
-categories: JavaScript
-tags: Promise
-top:
-cover: https://images.unsplash.com/photo-1598099114415-3076be5be744?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjg5ODI0fQ
----
 > <h4> 
 > 前端异步处理之 - Promise vs async/await
 > </h4>
 
-
-
-<!--more-->
-
 ### 前置知识
 
-#### 1/ js回调地狱
+#### 1、 js回调地狱
 
-> 在开发过程中我们经常遇到这种情况: 
+> 在开发过程中我们经常遇到这种情况
 >
-> 异步js或使用回调的js很难直观地得到正确的结果 , 一个异步函数的输出是另外一个异步函数的输入,如果嵌套层数过多，可读性和可以维护性都会变得很差，产生所谓的“回调地狱
+> 异步js或使用回调的js很难直观地得到正确的结果 , 一个异步函数的输出是另外一个异步函数的输入,如果嵌套层数过多，可读性和
+>
+> 可维护性都会变得很差，产生所谓的“回调地狱
 
-```
+```js
 let fs = require('fs')
-
 fs.readFile('./name.txt','utf8',function(err,data){
   fs.readFile(data, 'utf8',function(err,data){
     fs.readFile(data,'utf8',function(err,data){
@@ -40,28 +27,18 @@ fs.readFile('./name.txt','utf8',function(err,data){
  - **嵌套调用**，第一个函数的输出往往是第二个函数的输入；
 - **处理多个异步请求并发**，开发时往往需要同步请求最终的结果;
 
-#### 2/ 怎么处理回调地狱
+#### 2、怎么处理回调地狱
 
 - **消灭嵌套调用**：通过 Promise 的链式调用可以解决(.then())；
 - **合并多个任务的请求结果**：使用 Promise.all 获取合并多个任务的错误处理。
 
+
+
 ### Promise
 
-#### 1.什么是promise?
+#### 1.什么是Promise?
 
-![](https://s3.ax1x.com/2020/11/13/DS4cZt.png)
- 如上图所示,Promise是一个构造函数,身上有
-
-- all()
-
-- reject()
-
-- resolve()几个方法,
-
-prototype上有
-
-- then()
-- catch()等方法
+> Promise是一种可以将嵌套调用改为链式调用的一种方案，用于解决异步编程代码风格的问题
 
 #### 2.Promise的特征
 
@@ -73,11 +50,11 @@ prototype上有
   - pending ---> fulfilled
   - pending ---> rejected
 
-**`Promise`的优点：**
+#### 3.Promise的优点：
 
-**可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。**
+>  可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。
 
-#### 3.Promise怎么创建?
+#### 4.Promise怎么创建?
 
 - `Promise`构造函数接受一个函数作为参数，该函数的两个参数分别是`resolve`和`reject`。它们是两个函数，由 `JavaScript` 引擎提供，不用自己部署
 - `resolve`函数的作用是，将`Promise`对象的状态从“未完成”变为“成功”（即从 `pending` 变为 `resolved`），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；
@@ -106,11 +83,11 @@ promise.then(res=>{
 
 
 
-#### 4. 实现一个符合PromiseA+规范的Promise
+#### 5. 实现一个符合PromiseA+规范的Promise
 
 该版本只能简单实现处理同步/异步函数, then的链式调用并没有真正实现...需要再做研究
 
-```
+```js
 //1.先定义三个状态
 const PENDING = "PENDING";
 const FULFILLED = "FULFILLED";
@@ -189,39 +166,37 @@ let promise = new Promise((resolve, reject) => {
 // success ok
 ```
 
-####   5. async/await
+####   7. async/await
 
 > 一种相对Promise更为优雅的异步函数处理方案
 
-5.1	什么是async/await
+7.1	什么是async/await
 
 - `async`是异步的意思
 - `await`有等待的意思
 - `async`用于申明一个`function`是异步的，而`await` 用于等待一个异步方法执行完成。
 
-5.2     使用
+7.2     使用
 
-```
+```js
 async getAjaxData(){
 	let res = await sendAjax()
 }
 ```
 
-5.3 注意事项
+7.3 注意事项
 
-```
-- await操作符等的是一个返回的结果，那么如果是同步的情况，那就直接返回了。
-- 如果是异步的情况下，await会阻塞整一个流程，直到结果返回之后，才会继续下面的代码。
-阻塞代码是一个很可怕的事情，而async函数，会被包在一个promise中，异步去执行。所以await只能在async函数中使用，如果在正常程序中使用，会造成整个程序阻塞，得不偿失。
-```
+> - await 操作符等的是一个==成功的结果==，那么如果是同步的情况，那就直接返回了。
+> - 如果是异步的情况下，await会阻塞整一个流程，直到结果返回之后，才会继续下面的代码。
+> 阻塞代码是一个很可怕的事情，而async函数，会被包在一个Promise中，异步去执行。所以await只能在async函数中使用，如果在正常程序中使用，会造成整个程序阻塞，得不偿失。
 
-#### 6.Promise 和 async/await区别
+#### 8.Promise 和 async/await区别
 
 直接上代码
 
 - Promise版本
 
-```
+```js
 function doIt() {
     console.time("doIt");
     const time1 = 300;
@@ -245,7 +220,7 @@ doIt();
 
 - async / await 版本
 
-```
+```js
 async function doIt() {
     console.time("doIt");
     const time1 = 300;

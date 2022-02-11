@@ -19,7 +19,7 @@ https://juejin.im/post/6844903923136856078
 https://segmentfault.com/a/1190000019891825
 
 
-HTTP 是基于 TCP/IP 协议的一个应用层协议，是现代互联网的一个基础协议。规定了客户端与服务端之间的通信格式以及所占用的服务端口80(HTTPS是443)。
+HTTP 是基于 TCP/IP 协议的一个**应用层**协议，是现代互联网的一个基础协议。规定了客户端与服务端之间的通信格式以及所占用的服务端口80(HTTPS是443)。
 
 ### 版本
 
@@ -83,7 +83,6 @@ Last-Modified: Wed, 5 August 1996 15:55:28 GMT
 ##### Content-Type
 
 在 HTTP 1.0 的时候，任何的资源都可以被传输，传输的格式呢也是多种多样的，客户端在收到响应体的内容的时候就是根据这个 Content-Type 去进行解析的。所以**服务端返回时候**必须带着这个字段。
-![](https://s1.ax1x.com/2020/10/30/BtYKBj.png)
 一些常见的 Content-Type 可以参考 对照表。 这些 Content-Type 有一个总称叫做[MIME type](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types)
 
 ##### 特性
@@ -120,7 +119,7 @@ Last-Modified: Wed, 5 August 1996 15:55:28 GMT
 HTTP 1.1默认保持长连接，数据传输完成保持tcp连接不断开,继续用这个通道传输数据.
 
 B站首页，就有keep-alive，因为他们也有IM的成分在里面。需要大量复用TCP连接～
-![](https://s1.ax1x.com/2020/10/30/Btt4L4.png)
+
 
 ###### 管道化
 
@@ -162,8 +161,6 @@ tcp没有断开，用的同一个通道
   实际上，浏览器确实使用并行连接，但它们将并行连接的总数限制为少量（**通常为四个**）。服务器可以自由地关闭来自特定客户端的过多连接。
 
 -  一些主流浏览器对HTTP 1.1和HTTP 1.0的最大并发连接数目，可以参考如下表格：
-
-![](https://s1.ax1x.com/2020/10/30/BtcGjA.png)
 
 
 ###### 断点传输

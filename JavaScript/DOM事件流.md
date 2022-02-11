@@ -1,32 +1,14 @@
----
-coverWidth: 1200
-date: 2020-11-03
-coverHeight: 750
-title: DOM事件 , 事件流
-categories: JavaScript
-tags: DOM事件事件流
-top:
-cover: https://images.unsplash.com/photo-1598099114415-3076be5be744?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjg5ODI0fQ
----
-> <h4> 
-> DOM事件, 事件流
-> </h4>
-
-<!--more-->
-
 ### DOM事件
 
 > 事件是指JavaScript与HTML交互的基础.要实现用户与页面的交互,先要对目标元素绑定特定的事件,设置事件处理函数,用户触发事件,事件处理函数执行,产生交互效果
 
 #### DOM事件级别
 
-DOM 级别分为四个级别：DOM0 级、DOM1 级、DOM2 级、DOM3 级；
-![B1JoY4.md.jpg](https://s1.ax1x.com/2020/10/28/B1JoY4.md.jpg)
+DOM 级别分为三个级别：DOM0 级、DOM2 级、DOM3 级；
 
-DOM事件分为三个级别:
-DOM0 级事件: 给元素绑定事件
+##### 1、DOM0 级事件: 给元素绑定事件
 
-```
+```js
 <button id="btn" type="button"></button>
 <script>
     var btn = document.getElementById('btn')
@@ -36,11 +18,11 @@ DOM0 级事件: 给元素绑定事件
     // btn.onclick = null // 解绑事件
 </script>
 ```
->	缺点：无法设置多个事件处理函数
+>缺点：无法设置多个事件处理函数
 
-DOM2 级事件:用到了事件监听
+##### 2、DOM2 级事件:事件监听
 
-```
+```js
 <button id="btn" type="button"></button>
 <script>
     var btn = document.getElementById('btn');    
@@ -60,7 +42,8 @@ DOM2 级事件:用到了事件监听
 
 > 需要注意的是在 IE8 及以下版本需要用 attachEvent 和 detachEvent 实现，只有两个参数，事件名需要以 on 开头，只支持在事件冒泡阶段执行事件处理函数。
 
-DOM3 级事件
+##### 3、DOM3 级事件
+
 > DOM3 级事件是在 DOM2 级事件的基础上添加了更多的事件类型，允许自定义事件。
 
 UI事件，当用户与页面上的元素交互时触发，如：load、scroll

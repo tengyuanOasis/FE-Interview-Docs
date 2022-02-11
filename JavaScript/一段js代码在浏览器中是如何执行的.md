@@ -1,4 +1,3 @@
----
   title: 一段js代码在浏览器中是如何执行的
   date: 2020-11-02
   coverWidth: 1200
@@ -6,7 +5,7 @@
   categories: JavaScript
   tags: JavaScript
   cover: https://drscdn.500px.org/photo/146543971/h%3D1080_k%3D1/v2?sig=9327a36e10963e5a969fb06c8544b8d1e302d1dc8e2c9512188c4ac860355498
----
+
  ### 一段js代码在浏览器中是如何执行的?
 
 >	在了解代码执行流程之前 , 我们需要知道一点前置知识 , 

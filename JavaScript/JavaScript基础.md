@@ -1,8 +1,8 @@
-# JavaScript基础
+
+
+JavaScript基础
 
 [TOC]
-
-<!--more-->
 
 #### 01、	JS 数据类型(7+1)
 

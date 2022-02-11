@@ -1,6 +1,6 @@
 nrm ls 报错
 
-```
+```shell
 internal/validators.js:124
     throw new ERR_INVALID_ARG_TYPE(name, 'string', value);
 
