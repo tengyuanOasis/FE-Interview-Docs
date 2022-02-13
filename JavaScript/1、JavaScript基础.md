@@ -51,7 +51,14 @@ JavaScript基础
   
   - typeof: 直接返回数据类型字段，但是无法判断数组、null、对象(均返回 object)
   
-  - [instanceof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof): 判断某个实例是不是属于原型,无法判断基本数据类型，对于引用类型数据，返回其其对应类型。
+  - [instanceof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof): instanceof检查实例的原型链中是否包含指定构造函数的原型：
+  
+    ```js
+    console.log(person1 instanceof Person);           // true 
+    console.log(person1 instanceof Object);           // true 
+    console.log(Person.prototype instanceof Object);  // true 
+    ```
+  
   - `Object.prototype.toString.call()`
   
     |                        | typeof      | instanceof                       | Object.prototype.toString.call() |
