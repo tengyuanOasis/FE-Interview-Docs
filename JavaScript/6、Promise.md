@@ -92,7 +92,7 @@ promise.then(res=>{
 const PENDING = "PENDING";
 const FULFILLED = "FULFILLED";
 const REJECTED = "REJECTED";
-//2.clss实例化一个promise
+//2.class实例化一个promise
 class Promise {
   constructor(executor) {
     this.status = PENDING;
