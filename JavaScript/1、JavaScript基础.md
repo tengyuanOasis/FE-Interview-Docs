@@ -23,11 +23,35 @@ JavaScript基础
   > 5. **String**: 
   >    - String 用于表示文本数据。String 有最大长度是 2^53 - 1，因为 String 的意义并非“字符串”，而是字符串的 UTF16 编码，我们字符串的操作 charAt、charCodeAt、length 等方法针对的都是 UTF16 编码。所以，字符串的最大长度，实际上是受字符串的编码长度影响的。
   > 6. **Symbol**:  
-  >    - Symbol是 ES6 中引入的新类型，它是一切非字符串的对象 key 的集合，在 ES6 规范中，整个对象系统被用 Symbol 重塑。
+  >    
+  >    - Symbol（符号）是ECMAScript 6新增的数据类型。符号是原始值，且符号实例是**唯一、不可变的**。符号的用途是确保对象属性使用唯一标识符，不会发生属性冲突的危险。
+  >    
+  >    - 使用：
+  >    
+  >    - https://juejin.cn/post/6844903812046520328
+  >    
+  >    - https://cloud.tencent.com/developer/article/1191039
+  >    
+  >      ```js
+  >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
+  >      let sym = Symbol(); console.log(typeof sym); // symbol 
+  >           
+  >      //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
+  >      let genericSymbol = Symbol();
+  >      let otherGenericSymbol = Symbol(); 
+  >      let fooSymbol = Symbol('foo');
+  >      let otherFooSymbol = Symbol('foo'); 
+  >      console.log(genericSymbol == otherGenericSymbol);  // false 
+  >      console.log(fooSymbol == otherFooSymbol);          // false 
+  >      ```
+  >    
+  >      
   > 7. **bigInt**
-  >    - **`BigInt`** 是一种内置对象，它提供了一种方法来表示大于 `253 - 1` 的整数。这原本是 Javascript中可以用 [`Number`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number) 表示的最大数字。**`BigInt`** 可以表示任意大的整数。
+  >    
+  >    - **`BigInt`** 是一种内置对象，它提供了一种方法来表示大于 `2^53 - 1` 的整数。这原本是 Javascript中可以用 [`Number`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number) 表示的最大数字。**`BigInt`** 可以表示任意大的整数。
   >    - 不能用于 [`Math`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math) 对象中的方法；
   >    - 不能和任何 [`Number`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number) 实例混合运算，两者必须转换成同一种类型。
+  >    - 可以直接在常规 Number 后面增加一个字符 `n` 表示一个 BigInt
 
 - **引用数据类型:**
 
@@ -186,7 +210,11 @@ JavaScript基础
 
 #### 06 、 JavaScript 可执行上下文
 
-> 
+[《JavaScript 可执行上下文》]()
+
+> js指向变量或函数时，会生成一个与该变量或函数相关的执行环境，这个执行环境就是可执行上下文
+>
+> 可执行上下文规定了该变量或者函数可访问的变量及他们的行为
 
 #### 07 、 JavaScript 在浏览器中如何执行的
 
@@ -243,29 +271,9 @@ js内置对象主要是只在程序执行前存在全局作用域里面的由js�
 
 #### 12 、闭包
 
-```
-闭包是指内部函数可以访问其所在的外部函数中声明的参数和变量;
 
-创建闭包最常用的方法是在一个函数内创建另外一个函数,创建的函数可以访问父级函数的局部变量;
-
-闭包主要有两个用途:
-
-1/ 使我们可以在函数外部访问到函数内部的变量,通过这个方法,我们可以在函数外部调用闭包函数,在函数外部访问到函数内部变量
-
-2/ 使已经运行过的函数上下文的变量对象继续保存在内存中,不被垃圾回收机制释放内存,但是操作不当可能会造成内存泄露
-```
 
 #### 13、继承
-
-```
-继承实现方式:
-- 原型链继承
-- 构造函数继承
-- 组合继承(原型链+构造函数继承)
-- 原型式继承
-- 寄生式继承
-- 寄生组合式继承
-```
 
 [<<JavaScript 深入之继承的多种方式和优缺点>>](https://github.com/mqyqingfeng/Blog/issues/16)
 
