@@ -13,7 +13,6 @@ permalink:
 
 <!--more-->
 
-
 本文参考: 
 https://juejin.im/post/6844903923136856078
 https://segmentfault.com/a/1190000019891825
@@ -25,11 +24,7 @@ HTTP 是基于 TCP/IP 协议的一个**应用层**协议，是现代互联网的
 
 HTTP 协议从开始立项到现在一共经历了 4 个版本:
 
-```
-HTTP 0.9 -> HTTP 1.0 -> HTTP 1.1 -> HTTP 2
-```
-
-
+> HTTP 0.9 -> HTTP 1.0 -> HTTP 1.1 -> HTTP 2
 
 #### HTTP 0.9
 
@@ -57,9 +52,6 @@ GET / HTTP/1.0
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5)
 Accept: */*
 ```
-浏览器控制台reponse headers
-![](https://s1.ax1x.com/2020/10/30/BtJAlF.png)
-
 可以看到在请求方法之后有 请求资源的位置 + 请求协议版本，之后是一些客户端的信息配置
 
 ##### 响应头
@@ -75,9 +67,6 @@ Last-Modified: Wed, 5 August 1996 15:55:28 GMT
 // 这是一个空行
 ...数据内容
 ```
-浏览器控制台request headers
-![](https://s1.ax1x.com/2020/10/30/BtJfhV.png)
-
 服务端的响应头第一个就是 请求协议版本，后面紧跟着是这次请求的状态码、以及状态码的描述，之后的内容是一些关于返回内容的描述。
 
 ##### Content-Type
