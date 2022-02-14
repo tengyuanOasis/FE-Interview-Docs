@@ -35,7 +35,7 @@ JavaScript基础
   >      ```js
   >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
   >      let sym = Symbol(); console.log(typeof sym); // symbol 
-  >           
+  >                               
   >      //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
   >      let genericSymbol = Symbol();
   >      let otherGenericSymbol = Symbol(); 
@@ -210,7 +210,7 @@ JavaScript基础
 
 #### 06 、 JavaScript 可执行上下文
 
-[《JavaScript 可执行上下文》]()
+[《JavaScript 可执行上下文》](https://github.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F.md)
 
 > js指向变量或函数时，会生成一个与该变量或函数相关的执行环境，这个执行环境就是可执行上下文
 >
@@ -228,52 +228,50 @@ JavaScript基础
 
 所有`typeof`返回值为 `object` 的对象（如数组）都包含一个内部属性 [[Class]],这个属性无法直接访问，一般通过以下代码查看
 
-```
+```js
 Object.prototype.toString.call(Array)  //"[object Function]"
 ```
 
 #### 10 、 Js 内置对象都有哪些
 
-```
-js内置对象主要是只在程序执行前存在全局作用域里面的由js定义的一些全局属性,函数和用来实例化其他对象的构造函数对象.
-
-一般我们经常用到的
-
-全局函数变量值: NaN , undefined ,
-
-全局函数: parseInt() , paeseFloat()
-
-用来实例化的全局构造函数: Date , Object 等
-```
+> js内置对象主要是只在程序执行前存在全局作用域里面的由js定义的一些全局属性,函数和用来实例化其他对象的构造函数对象.
+>
+> 一般我们经常用到的
+>
+> - 全局函数变量值: NaN , undefined , 
+>
+> - 全局函数: parseInt() , paeseFloat()
+>
+> - 用来实例化的全局构造函数: Date , Object 等
 
 #### 11 、原型原型链
 
-```
-01/ 原型:
--	Js中我们使用构造函数来新建对象的
--	每个构造函数内部都有一个prototype属性,这个属性值是一个对象,包含了可以由该构造函数共享的实例和方法
-- 我们使用构造函数新建一个对象后,这个对象内部有一个`__proto__`指针,可以指向构造函数prototype属性对应的值,es5中我们一般称他为对象的原型 浏览器可以通过`__proto__`值来获取,也可以用Object.getPrototypeOf()找到对象的原型
+> 01/ 原型:
+> -	Js中我们使用构造函数来新建对象的
+> -	每个构造函数内部都有一个prototype属性,这个属性值是一个对象,包含了可以由该构造函数共享的实例和方法
+> - 我们使用构造函数新建一个对象后,这个对象内部有一个`__proto__`指针,可以指向构造函数prototype属性对应的值,es5中我们一般称他为对象的原型 浏览器可以通过`__proto__`值来获取,也可以用Object.getPrototypeOf()找到对象的原型
+>
+> 02/ 原型链:
+> - 当我们访问一个对象的属性时,如果这个对象里面不存在该属性的时候,那么就会到这个对象的原型对象中找这个属性,就这样一层层的找就构成了原型链,最后找到Object.proptotype,如果还没找到就会返回null.
+>
+> 03/ 获取原型的办法:
+> - `p.__proto__`
+> - `p.constructor.prototype`
+> - `Object.getPrototypeOf(p)`
+>
+> 04/ 原型可以做什么?
+> - 实现继承
+> - 共享我们的一些实例和方法
 
-02/ 原型链:
-- 当我们访问一个对象的属性时,如果这个对象里面不存在该属性的时候,那么就会到这个对象的原型对象中找这个属性,就这样一层层的找就构成了原型链,最后找到Object.proptotype,如果还没找到就会返回null.
-
-03/ 获取原型的办法:
-- `p.__proto__`
-- `p.constructor.prototype`
-- `Object.getPrototypeOf(p)`
-
-04/ 原型可以做什么?
-- 实现继承
-- 共享我们的一些实例和方法
-```
-
-[<<JavaScript 原型原型链>>]()
+[<<JavaScript 原型原型链>>](https://github.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8E%9F%E5%9E%8B%E5%8E%9F%E5%9E%8B%E9%93%BE.md)
 
 #### 12 、闭包
 
-
+[《闭包》](https://github.com/JuntengMa/Docs/blob/main/JavaScript/4%E3%80%81%E9%97%AD%E5%8C%85.md)
 
 #### 13、继承
+
+[<<JavaScript 继承>>](https://github.com/JuntengMa/Docs/blob/main/JavaScript/5%E3%80%81js%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F.md)
 
 [<<JavaScript 深入之继承的多种方式和优缺点>>](https://github.com/mqyqingfeng/Blog/issues/16)
 
@@ -348,10 +346,10 @@ js内置对象主要是只在程序执行前存在全局作用域里面的由js�
 
 
   - getBoundingClientRect()
-  ```
 
 **04/ 如何避免回流重绘?**
 
+  ```
 - CSS
 
   - 避免使用`table`布局。
@@ -373,145 +371,67 @@ js内置对象主要是只在程序执行前存在全局作用域里面的由js�
 **回流必将引起重绘，重绘不一定会引起回流。**
 
 参考:[<<浏览器的回流与重绘 (Reflow & Repaint)>>](https://juejin.im/post/6844903569087266823)
-
-#### 16 / http 缓存
-
-http 缓存按我自己的理解:
-
-> 我更愿意叫做浏览器缓存,缓存主要发生在浏览器端,而 http 起到的作用是告诉浏览器是否使用缓存资源,是否进行缓存...
-
-01/ 为什么要缓存呢?
-
-> 用于性能提升,减少延迟,提高网页加载速度;同时,由于缓存文件可以重复利用,还可以减少带宽,降低网络负荷
-
-02/ 浏览器怎么才能缓存?
-
-> http 缓存机制主要在 http 响应头中设定，响应头中相关字段为 Expires、Cache-Control、Last-Modified、Etag。
-> 可以控制浏览器是否使用缓存、缓存多久
-
-03/ 那么如何知晓浏览器是读取了缓存还是直接请求服务器？如下图网站来做个示例：
-
-![](https://s3.ax1x.com/2020/11/12/BzalAP.png)
-
-第一次打开该网站后，如果再次刷新页面。会发现浏览器加载的众多资源中，有一部分 size 有具体数值，然而还有一部分请求，比如图片、css 和 js 等文件并没有显示文件大小，而是显示了 from dis cache 或者 from memory cache 字样。这就说明了，该资源直接从本地硬盘或者浏览器内存读取，而并没有请求服务器。
-
-04/ 浏览器缓存方式?
-浏览器缓存分为两种:
-
-- 强制缓存
-- 协商缓存
-
-05/ 浏览器缓存机制
-
-> 1\ 浏览器加载资源的时候,先根据资源的 http header 判断他是否命中强缓存,
->
->     -	如果命中,浏览器就先从自己的缓存(先从内存中找,找不到再去磁盘中找)中读取资源,不会发送请求到服务器
->
-> 2\ 没有命中的时候,浏览器会发送一个请求给服务器,通过服务器端的另外的一些 http header 来验证这个资源是否命中协商缓存
->
-> - 如果命中协商缓存,服务器会将这个请求返回,但是不会返回这个请求的数据,而是告诉客户端可以直接从缓存中加载资源,然后浏览器重新去缓存中读取数据
->
-> 3\强缓存和协商缓存相同点:
->
-> - 命中都是从浏览器缓存中加载资源
->
-> 4\不同点
->
-> - 强缓存不发请求到服务器
-> - 协商缓存会发请求给服务器
->
-> 05\协商缓存也没有命中的时候,浏览器直接去服务器获取数据
-
-06/ 判断缓存机制
-
-![](https://s3.ax1x.com/2020/11/12/BzB1bj.png)
-
-参考:
-
-- [<<前端优化：浏览器缓存技术介绍>>](https://juejin.im/post/6844903672556552205#heading-2)
-- [<<http 面试必会的：强制缓存和协商缓存>>](https://juejin.im/post/6844903838768431118#heading-0)
-
-#### 17 / SSR/BSR 区别
-
-- SSR:服务端渲染
-
-  对营销推广的要求比较高的产品,比如官网等
-
   ```
-  - M+V发生在服务端,服务器压力较大
-  - 页面访问和显示速度更快(DOM比较少)
-  - 有利于SEO搜索引擎优化
-  - 前后端不分离,后端开发压力大
-  - 功能不能过于复杂,多用于功能交互都比较简单的产品
-  ```
+#### 16 、 SSR/BSR 区别
 
-- BSR:客户端渲染
+- SSR:服务端渲染，对营销推广的要求比较高的产品,比如官网等
 
-  对营销推广要求没有那么搞的产品,例如后台管理系统
+- BSR:客户端渲染 ， 对营销推广要求没有那么搞的产品,例如后台管理系统
 
-  ```
   - M+v过程发生在浏览器,浏览器压力较大
   - 页面访问和加载速度没有服务端渲染快
   - 不利于SEO优化
   - 前后端分离,便于代码调试和维护
   - 可以做更加复杂的产品
-  ```
 
-#### 18 / SEO 优化
+#### 17、Var 、Let 、const
 
-..................
+三者都用于变量声明方式
 
-#### 19 / MVC
+- var
 
-MVC 模式的意思是，软件可以分成三个部分。即 Model 模型、View 视图、Controller 控件器。
+  - var操作符定义的变量会成为包含它的函数的局部变量。
 
-> - View：视图，为用户提供使用界面，与用户直接进行交互。
->
-> - Model：模型，承载数据，并对用户提交请求进行计算的模块。其分为两类，一类称为数据承载 Bean，一类称为业务处理 Bean。所谓数据承载 Bean 是指实体类，专门承载业务数据的，如 Student、User 等。而业务处理 Bean 则是指 Service 或 Dao 对象，专门用于处理用户提交请求的。
->
-> - Controller：控制器，用于将用户请求转发给相应的 Model 进行处理，并处理 Model 的计算结果向用户提供相应响应。
+  - 使用var时，下面的代码不会报错。这是因为使用这个关键字声明的**变量会自动提升**到函数作用域顶部
 
-MVC 架构程序的工作流程是这样的：
+    ```js
+    function foo() {
+    	console.log(age);
+    	var age = 26;
+    }
+    foo(); // undefined
+    
+    之所以不会报错，是因为ECMAScript运行时把它看成等价于如下代码：
+    function foo() {
+      var age;   
+      console.log(age);   
+      age = 26; 
+    } 
+    foo();  // undefined 
+    ```
 
-![](https://s3.ax1x.com/2020/11/16/DAKqrd.png)
+- let声明
 
-> （1）用户通过 View 页面向服务端提出请求，可以是表单请求、超链接请求、AJAX 请求等。
->
-> （2）服务端 Controller 控制器接收到请求后对请求进行解析，找到相应 的 Model 对用户请求进行处理。
->
-> （3）Model 处理后，将处理结果再交给 Controller。
->
-> （4）Controller 在接到处理结果后，根据处理结果找到要作为向客户端发回的响应 View 页面。页面经渲染（数据填充）后，再发送给客户端。
+  - **let声明的范围是块作用域，而var声明的范围是函数作用域**。
 
-实际项目往往采用更灵活的方式
+  - let与var的另一个重要的区别，就是let声明的变量不会在作用域中被提升。(暂时性死区)
 
-![](https://s3.ax1x.com/2020/11/16/DAMGIx.png)
+  - 块级作用域是什么？
 
-> \1. 用户可以向 View 发送指令（DOM 事件），再由 View 直接要求 Model 改变状态。
->
-> \2. 用户也可以直接向 Controller 发送指令（改变 URL 触发 hashChange 事件），再由 Controller 发送给 View。
->
-> \3. Controller 非常薄，只起到路由的作用，而 View 非常厚，业务逻辑都部署在 View。所以，Backbone 索性取消了 Controller，只保留一个 Router（路由器） 。
+    - 块级作用域就是包含在函数括号内{...}的作用域。在这个作用域中，拥有着和函数作用域相同的行为。
+    
+    ```js
+    // name会被提升
+    console.log(name); // undefined
+    var name = "Matt";
+    // age不会被提升
+    console.log(age); // ReferenceError：age没有定义
+    let age = 26;
+    ```
 
-参考:
+- const 声明
 
-[<<MVC 与三层架构>>](https://juejin.im/post/6844903479568252935)
+  - const声明常量，且不可修改
 
-[<<MVC，MVP 和 MVVM 的图示>>](https://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html)
 
-#### 20 / MVVM
 
-![](https://s3.ax1x.com/2020/11/16/DAYfZF.png)
-
-  ```
-1. 各部分之间的通信，都是双向的。
-
-2. View 与 Model 不发生联系，都通过 ViewModule 传递。
-
-3. View 非常薄，不部署任何业务逻辑，称为"被动视图"（Passive View），即没有任何主动性，而 ViewModule非常厚，所有逻辑都部署在那里。
-4. 它采用双向绑定（data-binding）：View的变动，自动反映在 ViewModel，反之亦然
-```
-
-#### 21/ SPA 单页应用 & 多页应用
-
-[<<SPA（单页面应用）和 MPA（多页面应用）>>](https://www.jianshu.com/p/a02eb15d2d70)

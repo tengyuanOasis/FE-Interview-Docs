@@ -1,0 +1,126 @@
+
+
+现代JavaScript开发毋庸置疑会遇到代码量大和广泛使用第三方库的问题。解决这个问题的方案通常需要把代码拆分成很多部分，然后再通过某种方式将它们连接起来。
+
+#### 1、什么是模块化
+
+- 将一个复杂的js程序进行逻辑拆分，封装为几个模块，并进行组合
+- 块的内部数据为私有的，只是向外部暴露一些接口或方法与其他模块通信
+
+#### 2. 模块化的好处
+
+- 避免命名冲突(减少命名空间污染)
+- 更好的分离, 按需加载
+- 更高复用性
+- 高可维护性
+
+#### 3.模块化规范
+
+> - commonJs
+>
+>   ```js
+>   const largeNumbers = require('large-number');
+>   // ...
+>   largeNumber.add('999', '1');
+>   ```
+>
+> - AMD 
+>
+>   ```js
+>   require(['large-number'], function (large-number) {
+>   // ...
+>   	largeNumber.add('999', '1');
+>   });
+>   ```
+>
+>   
+>
+> - ES Module
+>
+>   ```js
+>   import * as largeNumber from 'large-number';
+>   // ...
+>   largeNumber.add('999', '1');
+>   ```
+>
+>   
+
+#### 4.CommonJS （CJS）
+
+> Nodejs 应用由Commonjs模块规范 ， 每个文件都是一个模块，都有自己的作用域
+>
+> 在一个文件中定义的函数、变量、类都是私有的，对其他文件不可见
+>
+> **在服务器端，模块的加载是运行时同步加载的；**
+>
+> **在浏览器端，模块需要提前编译打包处理。**
+
+##### 4.1、特点
+
+> - 所有代码都运行在模块作用域，不会污染全局作用域。
+> - 模块可以多次加载，但是只会在第一次加载时运行一次，然后运行结果就被缓存了，以后再加载，就直接读取缓存结果。要想让模块再次运行，必须清除缓存。
+> - 模块加载的顺序，按照其在代码中出现的顺序。
+
+##### 4.2、语法
+
+> - 暴露模块：`module.exports = value`或`exports.xxx = value`
+>
+>   ```js
+>   module.exports  = function(v1,v2){returb v1+v2}
+>   ```
+>
+> - 引入模块：`require(xxx)`,如果是第三方模块，xxx为模块名；如果是自定义模块，xxx为模块文件路径
+>
+>   ```js
+>     const largeNumbers = require('large-number');
+>     largeNumber.add('999', '1');
+>
+> - require()
+>
+>   require命令用于加载模块文件。**require命令的基本功能是，读入并执行一个JavaScript文件，然后返回该模块的exports对象。如果没有发现指定模块，会报错**。
+
+##### 4.3、模块加载机制
+
+> - CommonJS模块的加载机制是，**输入的是被输出的值的拷贝**。也就是说，一旦输出一个值，模块内部的变化就影响不到这个值
+> - CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。
+> - 由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。
+
+#### 5、AMD
+
+[requirejs](https://github.com/requirejs/requirejs)
+
+> CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。
+>
+> AMD规范则是**非同步加载模块**（异步），允许指定回调函数
+>
+> AMD模式可以用于浏览器环境，并且允许非同步加载模块，也可以根据需要动态加载模块。
+
+5.1、语法
+
+```js
+//定义没有依赖的模块
+define(function(){
+   return 模块
+})
+
+//定义有依赖的模块
+define(['module1', 'module2'], function(m1, m2){
+   return 模块
+})
+
+//引入使用模块:
+require(['module1', 'module2'], function(m1, m2){
+   使用m1/m2
+})
+
+```
+
+#### 6、ES MODULE
+
+es6模块化，不详谈
+
+
+
+
+
+[AMD、CMD区别](https://www.zhihu.com/question/20351507/answer/14859415)

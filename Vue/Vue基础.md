@@ -2,7 +2,7 @@
 
 > Vue是一套用于构建用户界面的**渐进式框架**
 >
-> 渐进式框架：Vue.js!只提供了vue-cli生态中最核心的组件系统和双向数据绑定，不需要一次搞明白整个Vue生态，
+> **渐进式框架**：Vue.js只提供了vue-cli生态中最核心的**组件系统和双向数据绑定**，不需要一次搞明白整个Vue生态，
 > [](https://www.google.com.tw/url?sa=i&url=https%3A%2F%2Fitaigi.tw%2Fk%2F%25E7%25A8%258D%25E7%25AD%2589%25E4%25B8%2580%25E4%25B8%258B%2F&psig=AOvVaw3v28_E8lnjlEMSY6jmTrxg&ust=1641886544958000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNCv05TWpvUCFQAAAAAdAAAAABAD)
 ##### 2、Vue优缺点
 
@@ -24,6 +24,10 @@
 ##### 4、MVVM是什么？和MVC有何区别呢？
 
 > https://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
+>
+> [<<MVC 与三层架构>>](https://juejin.im/post/6844903479568252935)
+>
+> [<<MVC，MVP 和 MVVM 的图示>>](https://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html)
 
 ##### 5、Vue中当前组件所有属性快速传递给子组件
 

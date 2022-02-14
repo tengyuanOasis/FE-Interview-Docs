@@ -12,8 +12,9 @@ React父组件调用子组件方案
 
 ## 方案一： ref控制
 
-#### Parent Component ( Parent.tsx )
-```
+**Parent Component ( Parent.tsx )**
+
+```jsx
 import * as React from 'react';
 
 import { ChildA } from './ChildA';
@@ -57,8 +58,9 @@ export class Parent extends Childrens {
 
 
 ```
-#### Children Component  (ChildA.tsx)
-```
+**Children Component  (ChildA.tsx)**
+
+```jsx
 import * as React from 'react';
 
 interface ChildAProps {

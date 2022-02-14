@@ -1,4 +1,4 @@
-### for-in
+### 1、for-in
 
 - 遍历一个对象的除[Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)以外的[可枚举](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)属性, **用于遍历对象**
 - for...in 循环对象，每个item代表key
@@ -43,11 +43,9 @@ Output :
 */
 ```
 
+### 2、for-of
 
-
-### for-of
-
-- **用于遍历数组**
+- 用于遍历**数组**
 - for-of 是 ==ES6==引入属性
 - for-of 不能用来遍例普通对象,需要和 Obect.keys()搭配使用
 - for...of 循环出的是 value
@@ -73,7 +71,9 @@ output:
 - 注意，for...of 是 ES6 新引入的特性。修复了 ES5 引入的 for...in 的不足
 - for...of 不能循环普通的对象，需要通过和 Object.keys()搭配使用
 
-### Map & forEach
+
+
+### 3、Map & forEach
 
 ###### 相同点：
 

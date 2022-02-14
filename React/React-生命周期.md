@@ -12,4 +12,3 @@ cover: https://images.unsplash.com/photo-1604573798783-6b5fb01260f9?ixlib=rb-1.2
 >
 > ​	越基础,越重要哦~
 
-![](https://s1.ax1x.com/2020/11/06/Bf52x1.jpg)
