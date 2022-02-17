@@ -12,3 +12,11 @@ cover: https://images.unsplash.com/photo-1604573798783-6b5fb01260f9?ixlib=rb-1.2
 >
 > ​	越基础,越重要哦~
 
+#### 17以前
+
+![](https://gitee.com/JuntengMa/imgae/raw/master/view)
+
+#### 17版本
+
+![](https://segmentfault.com/img/bVcQNMz/view)
+

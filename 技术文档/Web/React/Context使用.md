@@ -1,0 +1,2 @@
+1、同一个Context可嵌套使用，子组件获取到最近的一个Context。
+2、Context的数据是有state控制的。

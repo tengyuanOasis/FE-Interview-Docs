@@ -21,8 +21,6 @@ AJAX复习一下~
 
 **现在浏览器AJAX主要依靠XMLHttpRequest对象实现**
 
-![](https://s1.ax1x.com/2020/11/10/BbxQdP.png)
-
 ##### 03 - 创建ajax
 
 ###### 1/创建Ajax核心对象XMLHttpRequest
@@ -39,7 +37,7 @@ if(window.XMLHttpRequest){
 ###### 2/向服务器发送请求
 
 ```js
-xhr.open(method,url,async:boolean)
+xhr.open(method,url,async:)
 xhr.send(string); //POST请求时候采用string参数,否则不需要带参数
 ```
 

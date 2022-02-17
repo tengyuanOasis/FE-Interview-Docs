@@ -16,8 +16,6 @@ cover: https://source.unsplash.com/random?count=10/1600x900
 
 #### 01 / 生命周期
 
-**react15生命周期**![](https://s1.ax1x.com/2020/11/10/BLFB1P.png)
-
 React的生命周期就是组件从初始化到卸载到全过程，可以分为以下几个阶段
 - 初始化阶段(
   - **constructor()**, 
@@ -38,8 +36,6 @@ React的生命周期就是组件从初始化到卸载到全过程，可以分为
 
 
 **react16生命周期**
-
-![](https://s1.ax1x.com/2020/11/10/BLkabF.png)
 
 在React16的生命周期中，去掉了曾经的**componentWillMount**和**componentWillUpdate**，使用**getDerivedStateFromProps**代替这两个方法。同时在更新阶段的render方法和componentDidUpdate之间，新增了一个**getSnapshotBeforeUpdate**方法。接下来就来详细了解一下React这么做的原理以及这些新增生命周期的具体使用
 
@@ -120,8 +116,6 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
 
 #### 02 / Virtual Dom
 
-
-
 - 什么是Virtual Dom?
 
   - 在原生的`JavaScript`程序中，我们直接对`DOM`进行创建和更改，而`DOM`元素通过我们监听的事件和我们的应用程序进行通讯。
@@ -133,27 +127,21 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
 
   - 可以提高开发效率
 
-    ```
-    使用JavaScript，我们在编写应用程序时的关注点在于如何更新DOM。
+    > 使用JavaScript，我们在编写应用程序时的关注点在于如何更新DOM。
+    >
+    > 使用React，你只需要告诉React你想让视图处于什么状态，React则通过VitrualDom确保DOM与该状态相匹配。你不必自己去完成属性操作、事件处理、DOM更新，React会替你完成这一切。
+    >
+    > 这让我们更关注我们的业务逻辑而非DOM操作，这一点即可大大提升我们的开发效率。
     
-    使用React，你只需要告诉React你想让视图处于什么状态，React则通过VitrualDom确保DOM与该状态相匹配。你不必自己去完成属性操作、事件处理、DOM更新，React会替你完成这一切。
-    
-    这让我们更关注我们的业务逻辑而非DOM操作，这一点即可大大提升我们的开发效率。
-    ```
-
   - 性能提升?(有一些矛盾)
 
-    ```
-    - 直接说虚拟DOM可以提升性能这种说法是很片面的,直接操作dom非常耗费性能这一点毋庸置疑,但是react同样也无法避免操作dom
-    -	如果是首次渲染,virtualDom不具有任何优势,甚至要进行更多的计算和耗费更多的内存
-    - virtualDOm优势在于diff算法和批量处理策略,在react页面更新之前,已经提前计算好了如何更新和渲染dom,减少重绘回流,因此可以理解为提升了性能
-    ```
-
+    > - 直接说虚拟DOM可以提升性能这种说法是很片面的,直接操作dom非常耗费性能这一点毋庸置疑,但是react同样也无法避免操作dom
+  > -	如果是首次渲染,virtualDom不具有任何优势,甚至要进行更多的计算和耗费更多的内存
+    > - virtualDOm优势在于diff算法和批量处理策略,在react页面更新之前,已经提前计算好了如何更新和渲染dom,减少重绘回流,因此可以理解为提升了性能
+    
   - 跨浏览器兼容
-
-    ```
-    virtualDom自己实现了一套事件机制,模拟了事件捕获和冒泡的过程,采用了事件代理和批量更新的方法,可以抹平各浏览器事件处理不兼容的问题
-    ```
+  
+    > virtualDom自己实现了一套事件机制,模拟了事件捕获和冒泡的过程,采用了事件代理和批量更新的方法,可以抹平各浏览器事件处理不兼容的问题
 
 - React组件的渲染流程
 
@@ -161,7 +149,7 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
 
     - JSX编写
 
-      ```
+      ```jsx
       class Hello extends Component {
         render() {
           return <div>Hello ConardLi</div>;
@@ -171,7 +159,7 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
 
     - `React.createElement`编写
 
-      ```
+      ```jsx
       class Hello extends Component {
         render() {
           return React.createElement('div', null, `Hello ConardLi`);
@@ -181,14 +169,14 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
 
     - `Babel`转化demo
 
-      ```
+      ```jsx
       <div>
         <img src="avatar.png" className="profile" />
         <Hello />
       </div>;
       ```
 
-      ```
+      ```jsx
       React.createElement("div", null, 
       	React.createElement("img", {
         	src: "avatar.png",
@@ -217,7 +205,7 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
 
   例如;
 
-  ```
+  ```jsx
   <div class="title">
         <span>Hello ConardLi</span>
         <ul>
@@ -227,7 +215,7 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
   </div>
   ```
 
-  ```
+  ```jsx
   	
   const VitrualDom = {
     type: 'div',

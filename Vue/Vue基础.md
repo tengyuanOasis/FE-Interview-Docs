@@ -274,8 +274,6 @@ inject: {
 	- 使用数组的splice方法，`arr.splice(index, 1, item)`
 	- 使用`Vue.$set(arr, index, value)`
 
-
-
 ##### 20、props怎么自定义验证
 
 ```js

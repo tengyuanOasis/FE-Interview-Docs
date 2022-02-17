@@ -61,7 +61,7 @@ cover: https://images.unsplash.com/photo-1605020419798-46652aa15452?ixlib=rb-1.2
 
 - 我现在有一个组件ContextDemo需要把state里面的数据共享出去,Consumers组件需要使用和修改共享出去的数据
 
-  ```
+  ```jsx
   <ContextDemo state={...this.state}>
      <Toolbar>
      		<Consumers/>
@@ -71,7 +71,7 @@ cover: https://images.unsplash.com/photo-1605020419798-46652aa15452?ixlib=rb-1.2
   
 -	ContextDemo组件
 
-  ```
+  ```jsx
   import React, { Component } from 'react';
   import { Toolbar } from './Toolbar';
   
@@ -98,7 +98,7 @@ cover: https://images.unsplash.com/photo-1605020419798-46652aa15452?ixlib=rb-1.2
 
 - 实例化React.createContext
 
-  ```
+  ```jsx
   import React, { Component } from 'react';
   import { Toolbar } from './Toolbar';
   
@@ -131,7 +131,7 @@ cover: https://images.unsplash.com/photo-1605020419798-46652aa15452?ixlib=rb-1.2
 
 - Toolbar组件
 
-  ```
+  ```jsx
   import React, { Component } from 'react';
   import { Consumers } from './Consumers';
   
@@ -146,7 +146,7 @@ cover: https://images.unsplash.com/photo-1605020419798-46652aa15452?ixlib=rb-1.2
 
 - Consumers组件
 
-  ```
+  ```jsx
   import React from 'react';
   
   //这里引入从ContextDemo中export的Consumer

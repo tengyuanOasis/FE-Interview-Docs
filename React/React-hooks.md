@@ -29,11 +29,11 @@ Hook是react16.8新增特性,可以在不编写class的情况下使用state以�
 
   - **使用:**
 
-    ```
+    ```jsx
     const [stateName , stateChangeFun] = useState(初始值)
     ```
 
-    ```
+    ```jsx
     const [count , setCount] = useState(0)
     <Button onClick={()=>setCount(count++)}>Click</Button>	
     ```
@@ -45,16 +45,16 @@ Hook是react16.8新增特性,可以在不编写class的情况下使用state以�
   `useEffect` 的第二个参数，有三种情况
 
   1. 什么都不传，组件每次 `render` 之后 `useEffect` 都会调用，相当于 `componentDidMount` 和 `componentDidUpdate`
-2. 传入一个空数组 [], 只会调用一次，相当于 `componentDidMount` 和 `componentWillUnmount`
+  2. 传入一个空数组 [], 只会调用一次，相当于 `componentDidMount` 和 `componentWillUnmount`
   3. 传入一个数组，其中包括变量，只有这些变量变动时，`useEffect` 才会执行
 
-  
 
-  
-  
-  
-  
-  
+
+
+
+
+
+
 
 
 
