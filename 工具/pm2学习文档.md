@@ -26,9 +26,9 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
   npm i -g pm2
-  或
+  #or
   npm install cnpm -g --registry=https://registry.npm.taobao.org
 ```
 
@@ -38,7 +38,7 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
     pm2 ls
 ```
 
@@ -52,7 +52,7 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
     pm2 start pm2.json
 ```
 
@@ -62,7 +62,7 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
     #pm2日志
     pm2 logs
     
@@ -79,7 +79,7 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
     # 停止所有进程
     pm2 stop all
     
@@ -96,7 +96,7 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
     # 重启所有进程
     pm2 restart all
     
@@ -113,7 +113,7 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
     # 杀死全部进程
     pm2 delete all 
     
@@ -130,7 +130,7 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
     # 重载全部进程
     pm2 reload all 
     
@@ -147,6 +147,7 @@ https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 
-```
+```shell
     pm2 show www_baidu_com
 ```
+

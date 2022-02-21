@@ -207,11 +207,11 @@ http {                           													#	 HTTP区块开始
 
 ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7fae0c748b88476c98cfa8bc0c883929~tplv-k3u1fbpfcp-watermark.awebp)
 
-### 4. 关于location匹配
+### 4. 关于==location==匹配
 
-```
+```shell
     #优先级1,精确匹配，根路径
-    location =/ {
+    location = / {
         return 400;
     }
 
@@ -234,8 +234,6 @@ http {                           													#	 HTTP区块开始
     location / {
         return 403;
     }
-
-复制代码
 ```
 
 [更多配置](https://link.juejin.cn/?target=https%3A%2F%2Fwww.runoob.com%2Fw3cnote%2Fnginx-setup-intro.html)
@@ -440,8 +438,8 @@ Content-Encoding: gzip
 
 在开发过程中，有一种场景，比如有项目有多个子系统需要通过同一个域名通过不同目录去访问 在A/B Test 灰度发布等场景也会用上
 比如：
-访问 a.com/a/*** 访问的是a系统
-访问 a.com/b/*** 访问的是b系统
+访问 a.com/a/访问的是a系统
+访问 a.com/b/访问的是b系统
 
 ![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c3fb33f1ddd455087ff3af7a04da24d~tplv-k3u1fbpfcp-watermark.awebp?)
 
