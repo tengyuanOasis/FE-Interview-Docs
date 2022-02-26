@@ -1,6 +1,38 @@
 ### Vue模板编译
 
-01、`new Vue()`
+#### 1、模板编译大致分为以下几个步骤：
+
+<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202241014889.png" alt="image-20220224101456765" style="zoom: 50%;float:left" />
+
+1. 通过`parse`函数将template转化为AST语法树
+
+2. 优化AST，性能优化
+
+3. 根据AST生成可执行代码 render 
+
+   如下代码，编译后如图
+
+   ```vue
+   <div>
+         <p>
+           {{name}}
+         </p>
+         <ul>
+           <li v-for="(item,index) in hobby" :key="index">{{item}}</li>
+         </ul>
+         <button v-on:click="changeHobby">修改hobby</button>
+    </div>
+   ```
+
+   ![image-20220224103903186](https://gitee.com/JuntengMa/imgae/raw/master/202202241039334.png)
+
+#### 2、Parse
+
+用于将html转化为AST ， 核心是使用了开源库**parseHTML**
+
+
+
+#### 3、`new Vue()`
 
 ```js
 const app = new Vue({
@@ -19,7 +51,7 @@ const app = new Vue({
   })
 ```
 
-01、`$mount `
+#### 4、`$mount `
 
 用于编译temple并渲染到页面
 
@@ -72,7 +104,9 @@ Vue.prototype.$mount = function (
       if (process.env.NODE_ENV !== "production" && config.performance && mark) {
         mark("compile");
       }
-      /*将template编译成render函数，这里会有render以及staticRenderFns两个返回，这是vue的编译时优化，static静态不需要在VNode更新时		进行patch，优化性能   
+      /*
+      将template编译成render函数，这里会有render以及staticRenderFns两个返回，
+      这是vue的编译时优化，static静态不需要在VNode更新时		进行patch，优化性能   
       🤣🤣😀😁🍔👇👇🍔🍔👇👇👇👇,模板编译核心
       */
       const { render, staticRenderFns } = compileToFunctions(
@@ -101,7 +135,7 @@ Vue.prototype.$mount = function (
 };
 ```
 
-03、`compileToFunctions`用于将`template`转化为`ast`语法树，并return出 render函数和带有缓存的renderFunc
+#### 5、`compileToFunctions`用于将`template`转化为`ast`语法树，并return出 render函数和带有缓存的renderFunc
 
 
 

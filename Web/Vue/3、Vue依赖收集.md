@@ -9,10 +9,12 @@ new Vue({
             <span>text1:</span> {{text1}}
             <span>text2:</span> {{text2}}
         <div>`,
-    data: {
-        text1: 'text1',
-        text2: 'text2',
-        text3: 'text3'
+    data(){
+       return {
+          text1: 'text1',
+          text2: 'text2',
+          text3: 'text3'
+       }
     }
 });
 ```

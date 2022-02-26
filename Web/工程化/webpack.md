@@ -29,7 +29,44 @@ yarn add webpack webpack-cli -dev(-D)
 //打包命令
 npx webpack
 ```
-### 4.插件
+### 4.webpack代码分割、动态引入原理
+
+> 代码分割： 所有文件打包在一起文件过大，会影响性能，将代码按页面，按功能等分割一个个模块动态加载，按需引入有利于性能优化
+>
+> 动态引入： CommonJs 、AMD 、Es6 module等
+
+#### 5. webpack loader 和 plugins区别 ， 谁先执行、谁后执行
+
+> loaders ： ----> ==编译器==
+>
+> - 用于解析代码 ， 通过配置不同的loader对css、字体、图片等资源进行解析
+>
+> - Loader在module.rules中配置，也就是说作为模块的解析规则而存在
+>
+> - 执行顺序： 从右向左，从后向前 ，如解析 scss
+>
+>   ```js
+>    rules: [
+>         {
+>           test: /\.s[ac]ss$/i,
+>           use: [
+>             // 将 JS 字符串生成为 style 节点
+>             'style-loader',
+>             // 将 CSS 转化成 CommonJS 模块
+>             'css-loader',
+>             // 将 Sass 编译成 CSS
+>             'sass-loader',
+>           ],
+>         },
+>    ]
+>   ```
+>
+> plugins：-----> ==功能扩展器==
+>
+> - plugin可以扩展webpack的功能，让webpack具有更多的灵活性。
+> - 在webpack运行的生命周期中会广播出许多事件，plugin可以监听这些事件，在合适的时机通过webpack提供的API改变输出结果。
+
+### 5.插件
 
 
 #### 1. webpack-dev-server

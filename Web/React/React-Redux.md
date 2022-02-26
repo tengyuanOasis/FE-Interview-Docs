@@ -33,7 +33,7 @@ Action 就是一个单纯的包含 { type , pyload }的对象,
 
 比如一个最简单的 action：
 
-```
+```js
 {
   type: 'ADD_TODO',
   text: 'Build my first Redux app'
@@ -48,7 +48,7 @@ Reducer接受`oldState`和`action`两个参数,并返回一个新的state
 
 一个Reducer_demo:
 
-```
+```js
 const initialState = {
   a: 'a',
   b: 'b'
@@ -105,7 +105,7 @@ const someApp = combineReducers({
 
 创建一个 Store 很容易，将 **root reducer** 函数传递给 `createStore` 方法即可：
 
-```
+```js
 import { createStore } from 'redux';
 import someApp from './reducers';
 let store = createStore(someApp);

@@ -89,7 +89,7 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
 
 **demo:**
 
-```
+```jsx
   static getDerivedStateFromProps(props, state) {
     if (props.age !== state.age) {
       return { age: props.age }
@@ -102,7 +102,7 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
   }
 ```
 
-```
+```jsx
   componentWillReceiveProps(nextporps) {
     if (nextporps.age !== this.state.age) {
       this.setState({
@@ -135,12 +135,12 @@ React16中也去掉了componentWillUpdate方法，新增了getSnapshotBeforeUpda
     
   - 性能提升?(有一些矛盾)
 
-    > - 直接说虚拟DOM可以提升性能这种说法是很片面的,直接操作dom非常耗费性能这一点毋庸置疑,但是react同样也无法避免操作dom
-  > -	如果是首次渲染,virtualDom不具有任何优势,甚至要进行更多的计算和耗费更多的内存
-    > - virtualDOm优势在于diff算法和批量处理策略,在react页面更新之前,已经提前计算好了如何更新和渲染dom,减少重绘回流,因此可以理解为提升了性能
-    
+    > -	直接说虚拟DOM可以提升性能这种说法是很片面的,直接操作dom非常耗费性能这一点毋庸置疑,但是react同样也无法避免操作dom
+    > -	如果是首次渲染,virtualDom不具有任何优势,甚至要进行更多的计算和耗费更多的内存
+    > -	virtualDOm优势在于diff算法和批量处理策略,在react页面更新之前,已经提前计算好了如何更新和渲染dom,减少重绘回流,因此可以理解为提升了性能
+
   - 跨浏览器兼容
-  
+
     > virtualDom自己实现了一套事件机制,模拟了事件捕获和冒泡的过程,采用了事件代理和批量更新的方法,可以抹平各浏览器事件处理不兼容的问题
 
 - React组件的渲染流程
