@@ -57,7 +57,7 @@ http {                           																							# HTTP区块开始
     include       mime.types；         													 # Nginx支持的媒体类型库文件（如服务器校验文件等，如下配置）
     
     #SSL证书
-    include /etc/nginx/conf.d/common/haohuipei.com-http-and-https.conf;
+    include xxxxxx;
     include /etc/nginx/conf.d/common/proxy-default.conf;
   
     default_type  application/octet-stream；           # 默认的文件类型
