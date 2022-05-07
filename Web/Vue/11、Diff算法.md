@@ -2,6 +2,13 @@ https://juejin.cn/post/6844903607913938951
 
 Vue diff算法借鉴了开源库snabbdom的diff算法，这里以此为例
 
+diff算法做了大概这几件事
+
+> 1. 将template解析为AST语法树 ，这里其实是模板编译做的事
+> 2. 将AST语法树转化为Vnode；
+> 3. 对比新老vnode同级是否相同，计算出最小修改点
+> 4. 对最小修改点进行更新
+
 ### 1、patch函数
 
 对比 vnode 和 oldVnode 区别，逐层对比同级dom区别，找到最小修改点，替换修改

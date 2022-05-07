@@ -99,4 +99,3 @@ cache-control: public , max-age=31536000
 - HTTP缓存主要分强制缓存和对比缓存
 - 强制缓存的HTTP相关头部Cache-Control，Exipres（HTTP1.0）,浏览器直接读本地缓存，不会再跟服务器端交互，状态码200。
 - 对比缓存的HTTP相关头部 Etag / If-None-Match 、Last-Modified / If-Modified-Since， (Etag优先级比Last-Modified / If-Modified-Since高)，每次请求需要让服务器判断一下资源是否更新过，从而决定浏览器是否使用缓存，如果是，则返回304，否则重新完整响应。
-

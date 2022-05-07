@@ -35,7 +35,7 @@ JavaScript基础
   >      ```js
   >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
   >      let sym = Symbol(); console.log(typeof sym); // symbol 
-  >                               
+  >                                    
   >      //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
   >      let genericSymbol = Symbol();
   >      let otherGenericSymbol = Symbol(); 
@@ -391,7 +391,7 @@ Object.prototype.toString.call(Array)  //"[object Function]"
   - 前后端分离,便于代码调试和维护
   - 可以做更加复杂的产品
 
-#### 17、Var 、Let 、const
+#### 17、var 、let 、const
 
 三者都用于变量声明方式
 
@@ -440,5 +440,10 @@ Object.prototype.toString.call(Array)  //"[object Function]"
 
   - const声明常量，且不可修改
 
+#### 18、js声明变量的步骤
 
+> js变量声明有两个步骤
+>
+> 1. 编译器会在当前作用域声明一个变量
+> 2. 运行时js引擎会在作用域中查找这个变量，如果能找到就会对其赋值
 

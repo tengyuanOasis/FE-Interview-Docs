@@ -1,5 +1,7 @@
 ### Vue模板编译
 
+> Vue使用template语法，但是template代码最终转换为可执行代码需要一系列的编译和转换；
+
 #### 1、模板编译大致分为以下几个步骤：
 
 <img src="https://gitee.com/JuntengMa/imgae/raw/master/202202241014889.png" alt="image-20220224101456765" style="zoom: 50%;float:left" />
@@ -29,8 +31,6 @@
 #### 2、Parse
 
 用于将html转化为AST ， 核心是使用了开源库**parseHTML**
-
-
 
 #### 3、`new Vue()`
 

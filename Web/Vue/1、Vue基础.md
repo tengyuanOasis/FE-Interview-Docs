@@ -115,7 +115,7 @@
 	```
 
 - 解决方案：
-	1. `computed `处理
+	1. `computed `过滤
 	2. `template`嵌套
 
 ##### 12、Vue响应式数据理解

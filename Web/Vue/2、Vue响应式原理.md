@@ -4,13 +4,29 @@
 
 1. 什么是响应式数据
 
-> “响应式”，是指当**数据改变后**，Vue 会通知到使用该数据的代码。例如，视图渲染中使用了数据，数据改变后，**视图也会自动更新**。
+> “响应式”，是指当**数据改变后**，Vue 会通知到使用该数据的代码。
+>
+> 例如，视图渲染中使用了数据，数据改变后，**视图也会自动更新**。
 >
 > Vue.js的响应式原理依赖于[Object.defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)，这也是Vue.js不支持IE8 以及更低版本浏览器的原因。Vue通过设定对象属性的 setter/getter 方法来监听数据的变化，==通过getter进行依赖收集，而每个setter方法就是一个观察者==，在数据变更的时候通知订阅者更新视图。
 
 
 
-2. 详细流程
+2. 原理：
+
+> Vuejs在实例化的过程中，会对实例化对象选项中的data属性进行遍历，并使用Object.defineProperty 把这些属性全部转为 getter/setter。
+>
+> 同时每一个实例对象都有一个watcher实例对象，他会在模板编译的过程中,用getter去访问data的属性，watcher此时就会把用到的data属性记为依赖，这样就建立了视图与数据之间的联系。
+>
+> 当之后我们渲染视图的数据依赖发生改变（即数据的setter被调用）的时候，watcher会对比前后两个的数值是否发生变化，然后确定是否通知视图进行重新渲染这样就实现了所谓的数据对于视图的驱动。
+>
+> 通俗地讲，它意味着我们在普通 HTML 模板中使用特殊的语法将 DOM “绑定”到底层数据。
+>
+> 一旦创建了绑定，DOM 将与数据保持同步。每当修改了数据，DOM 便相应地更新。这样我们应用中的逻辑就几乎都是直接修改数据了，不必与 DOM 更新搅在一起。这让我们的代码更容易撰写、理解与维护。
+
+
+
+3. 详细流程
 
 ![image-20211216134508994](https://gitee.com/JuntengMa/imgae/raw/master/image-20211216134508994.png)
 
