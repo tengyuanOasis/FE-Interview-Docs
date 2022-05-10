@@ -1,13 +1,4 @@
----
-cover: 'https://images.unsplash.com/photo-1603959816334-148900ef2c50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'
-coverWidth: 1200
-coverHeight: 750
-title: Http
-categories: Http&Https
-tags: Http
-top:
-permalink:
----
+
 HTTPS的一些知识
 
 <!--more-->
@@ -15,7 +6,7 @@ HTTPS的一些知识
 ### 1/什么是HTTP协议
 
 - HTTP协议是超文本传输协议的简称,规定了服务端和客户端(前后端)通信方式以及占用的接口
-- HTTP协议是一个局域TCP/IP通信协议来传输数据的
+- HTTP协议是一个基于TCP/IP通信协议来传输数据的
   
 ### 2/HTTP协议的特性
 
