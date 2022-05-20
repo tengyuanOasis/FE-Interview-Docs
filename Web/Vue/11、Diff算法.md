@@ -17,17 +17,17 @@ demo：
 
 - 如下template
 
-  ![image-20220224113202282](https://gitee.com/JuntengMa/imgae/raw/master/202202241132336.png)
+  ![image-20220224113202282](https://raw.githubusercontent.com/JuntengMa/image/master/202202241132336.png)
 
   
 
 - 转化为AST：
 
-  ![image-20220224113256032](https://gitee.com/JuntengMa/imgae/raw/master/202202241132098.png)
+  ![image-20220224113256032](https://raw.githubusercontent.com/JuntengMa/image/master/202202241132098.png)
 
 - 转化为Vnode：
 
-  ![image-20220224113134505](https://gitee.com/JuntengMa/imgae/raw/master/202202241131598.png)
+  ![image-20220224113134505](https://raw.githubusercontent.com/JuntengMa/image/master/202202241131598.png)
 
 - 每当页面进行一些DOM操作，就会触发patch函数
 
@@ -39,7 +39,7 @@ if (oldVnode.children[2] && oldVnode.children[2].children) {
  }
 ```
 
-​		![image-20220224113916637](https://gitee.com/JuntengMa/imgae/raw/master/202202241139713.png)
+​		![image-20220224113916637](https://raw.githubusercontent.com/JuntengMa/image/master/202202241139713.png)
 
 ### 2、patch函数
 

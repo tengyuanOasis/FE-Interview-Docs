@@ -27,7 +27,7 @@ https://juejin.cn/post/6948746074504986655#heading-6
 - `back( ) 、forward( ) 、go( )`  这种可以定位到某个浏览历史记录上
 - `pushState( ) 、replaceState（ ）`这种，操作历史记录
 
-![image-20220221141105523](https://gitee.com/JuntengMa/imgae/raw/master/202202211411599.png)
+![image-20220221141105523](https://raw.githubusercontent.com/JuntengMa/image/master/202202211411599.png)
 
 #### 3、`Back 、 forward 、go `详解
 
@@ -63,7 +63,7 @@ https://juejin.cn/post/6948746074504986655#heading-6
 
 > 向浏览器历史记录添加一条记录，并立即改变当前url
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202231747035.png" alt="image-20220223174708955" style="zoom:80%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202231747035.png" alt="image-20220223174708955" style="zoom:80%;float:left" />
 
  🍕如：当前浏览器地址为 : 
 
@@ -83,11 +83,11 @@ window.history.pushState(null,'新增的搜索页','/search?q=123&rlz=1C1FKPE_zh
 
 ###### **1、添加完历史记录，会立刻修改当前url ，且不会重新加载页面（刷新页面）**
 
-![](https://gitee.com/JuntengMa/imgae/raw/master/202202231752515.gif)
+![](https://raw.githubusercontent.com/JuntengMa/image/master/202202231752515.gif)
 
 ###### **2、历史记录history的length加一**
 
-![image-20220223175941149](https://gitee.com/JuntengMa/imgae/raw/master/202202231759188.png)
+![image-20220223175941149](https://raw.githubusercontent.com/JuntengMa/image/master/202202231759188.png)
 
 ###### 3、小结：
 
@@ -95,7 +95,7 @@ window.history.pushState(null,'新增的搜索页','/search?q=123&rlz=1C1FKPE_zh
 
 - 如果`pushState()`方法设置了一个跨域网址，则会报错。
 
-  ![image-20220223180316247](https://gitee.com/JuntengMa/imgae/raw/master/202202231803288.png)
+  ![image-20220223180316247](https://raw.githubusercontent.com/JuntengMa/image/master/202202231803288.png)
 
 ##### 2、replaceState
 
@@ -103,17 +103,17 @@ window.history.pushState(null,'新增的搜索页','/search?q=123&rlz=1C1FKPE_zh
 
 首先现在history中添加几条历史记录
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202231809440.png" alt="image-20220223180916400" style="zoom:80%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202231809440.png" alt="image-20220223180916400" style="zoom:80%;float:left" />
 
 使用replaceState修改当前记录
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202231811510.png" alt="image-20220223181111475" style="zoom:80%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202231811510.png" alt="image-20220223181111475" style="zoom:80%;float:left" />
 
 ###### 1、replaceState 可以修改**当前**历史记录 ， 但不会在历史记录中新增数据
 
 ###### 2、replaceState 一样不能跨域
 
-![image-20220223181723234](https://gitee.com/JuntengMa/imgae/raw/master/202202231817275.png)
+![image-20220223181723234](https://raw.githubusercontent.com/JuntengMa/image/master/202202231817275.png)
 
 #### 5、popState 事件
 
@@ -143,7 +143,7 @@ window.onpopstate = function (event) {
 };
 ```
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202231826149.png" alt="image-20220223182625105" style="zoom:80%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202231826149.png" alt="image-20220223182625105" style="zoom:80%;float:left" />
 
 #### 6、一些问题
 
@@ -151,13 +151,13 @@ window.onpopstate = function (event) {
 
 > 如下图，将window.history 置空， 再次打印，history不变 ， 故不可修改
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202231846489.png" alt="image-20220223184653450" style="zoom:80%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202231846489.png" alt="image-20220223184653450" style="zoom:80%;float:left" />
 
 ###### 2.history.length既然代表浏览器历史列表中的URL数量，那么这个数量可以无限多吗？ 
 
 > 如下图，最多50
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202231854038.png" alt="image-20220223185437002" style="zoom:80%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202231854038.png" alt="image-20220223185437002" style="zoom:80%;float:left" />
 
 ###### 3.location.href与history.pushState有什么区别？ 
 

@@ -44,11 +44,11 @@
 
 ##### 7、TCP/IP 通信传输流
 
-![image-20220212210823593](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212210823593.png)
+![image-20220212210823593](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212210823593.png)
 
 ##### 8、==TCP三次握手==
 
-![image-20220212211759313](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212211759313.png)
+![image-20220212211759313](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212211759313.png)
 
 > 为了准确无误地将数据送达目标处，TCP 协议采用了三次握手（three-way handshaking）策略。用 TCP 协议把数据包送出去后，TCP不会对传送后的情况置之不理，它一定会向对方确认是否成功送达。
 >
@@ -72,7 +72,7 @@
 > 2. 这时候服务端才接收到第一次滞留在网络中的握手请求，服务端会向客户端发送第二次握手并处于等待第3次握手状态，客户端接收到第二次握手请求后发现是过期的请求就可以通过停止发送第三次握手，服务端一段时间没接到第三次握手请求会自动关闭请求监听。
 > 3. 握手次数两次或四次都有问题，四次浪费资源，两次又不能保证因数据延迟的损耗
 
-![image-20220217150301454](https://gitee.com/JuntengMa/imgae/raw/master/202202171503538.png)
+![image-20220217150301454](https://raw.githubusercontent.com/JuntengMa/image/master/202202171503538.png)
 
 ##### 10、==四次挥手==
 
@@ -82,7 +82,7 @@
 
 TCP 连接的释放需要发送四个包（执行四个步骤），因此称为四次挥手(`Four-way handshake`)，**客户端或服务端均可主动发起挥手动作**。
 
-![image-20220217155856745](https://gitee.com/JuntengMa/imgae/raw/master/202202171558813.png)
+![image-20220217155856745](https://raw.githubusercontent.com/JuntengMa/image/master/202202171558813.png)
 
 回顾一下上图中符号的意思：
 

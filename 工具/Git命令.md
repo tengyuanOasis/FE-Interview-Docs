@@ -25,7 +25,7 @@ height: 750
 ## 02 - 创建新版本库
 
 ```
-git clone git@github.com:userName/repositoriesName.git
+git clone git@raw.githubusercontent.com:userName/repositoriesName.git
 
 cd test
 
@@ -45,7 +45,7 @@ cd existing_folder
 
 git init
 
-git remote add origin git@github.com:userName/repositoriesName.git
+git remote add origin git@raw.githubusercontent.com:userName/repositoriesName.git
 
 git add .
 
@@ -62,7 +62,7 @@ cd existing_repo
 
 git remote rename origin old-origin
 
-git remote add origin git@github.com:userName/repositoriesName.gi
+git remote add origin git@raw.githubusercontent.com:userName/repositoriesName.gi
 
 git push -u origin --all
 

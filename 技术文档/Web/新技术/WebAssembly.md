@@ -7,7 +7,7 @@
 
 2、emsdk安装 
 ```
-$ git clone https://github.com/juj/emsdk.git
+$ git clone https://raw.githubusercontent.com/juj/emsdk.git
 $ cd emsdk
 $ ./emsdk install latest
 $ ./emsdk activate latest

@@ -35,7 +35,7 @@ JavaScript基础
   >      ```js
   >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
   >      let sym = Symbol(); console.log(typeof sym); // symbol 
-  >                                    
+  >                                         
   >      //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
   >      let genericSymbol = Symbol();
   >      let otherGenericSymbol = Symbol(); 
@@ -72,19 +72,21 @@ JavaScript基础
   - 引用类型值是对象，保存在 **堆内存** 中。包含引用类型值的变量实际包含并非对象本身，而是指向该对象的指针。一个变量从另一个变量复制引用类型的值时，复制的也是指向该对象的指针。
 
 - **数据类型检测方法**
-  
+
   - typeof: 直接返回数据类型字段，但是无法判断数组、null、对象(均返回 object)
-  
-  - [instanceof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof): instanceof检查实例的原型链中是否包含指定构造函数的原型：
-  
+
+  - [instanceof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof): 检查实例的原型链中是否包含指定构造函数的原型：
+
+    [解析](https://juejin.cn/post/6844903613584654344)
+
     ```js
     console.log(person1 instanceof Person);           // true 
     console.log(person1 instanceof Object);           // true 
     console.log(Person.prototype instanceof Object);  // true 
     ```
-  
-  - `Object.prototype.toString.call()`
-  
+
+    - `Object.prototype.toString.call()`: [解析](https://zhuanlan.zhihu.com/p/118793721)
+
     |                        | typeof      | instanceof                       | Object.prototype.toString.call() |
     | ---------------------- | ----------- | -------------------------------- | -------------------------------- |
     | var test = 'kangkang'; | `string`    | test instanceof String `//false` | `[object String]`                |
@@ -217,7 +219,7 @@ JavaScript基础
 
 #### 06 、 JavaScript 可执行上下文
 
-[《JavaScript 可执行上下文》](https://github.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F.md)
+[《JavaScript 可执行上下文》](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F.md)
 
 > js指向变量或函数时，会生成一个与该变量或函数相关的执行环境，这个执行环境就是可执行上下文
 >
@@ -270,17 +272,17 @@ Object.prototype.toString.call(Array)  //"[object Function]"
 > - 实现继承
 > - 共享我们的一些实例和方法
 
-[<<JavaScript 原型原型链>>](https://github.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8E%9F%E5%9E%8B%E5%8E%9F%E5%9E%8B%E9%93%BE.md)
+[<<JavaScript 原型原型链>>](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8E%9F%E5%9E%8B%E5%8E%9F%E5%9E%8B%E9%93%BE.md)
 
 #### 12 、闭包
 
-[《闭包》](https://github.com/JuntengMa/Docs/blob/main/JavaScript/4%E3%80%81%E9%97%AD%E5%8C%85.md)
+[《闭包》](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/4%E3%80%81%E9%97%AD%E5%8C%85.md)
 
 #### 13、继承
 
-[<<JavaScript 继承>>](https://github.com/JuntengMa/Docs/blob/main/JavaScript/5%E3%80%81js%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F.md)
+[<<JavaScript 继承>>](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/5%E3%80%81js%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F.md)
 
-[<<JavaScript 深入之继承的多种方式和优缺点>>](https://github.com/mqyqingfeng/Blog/issues/16)
+[<<JavaScript 深入之继承的多种方式和优缺点>>](https://raw.githubusercontent.com/mqyqingfeng/Blog/issues/16)
 
 #### 14 、什么是 pure function
 

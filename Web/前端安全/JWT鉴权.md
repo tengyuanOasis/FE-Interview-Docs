@@ -26,7 +26,7 @@ permalink:
 #### 02/ 栗子:
 
 当Client端登录完成以后，Server端要返回一个7天有效的token，那么对应的Python的样例代码会是这样的：
-（[使用了PyJWT包：pip install pyjwt](https://link.zhihu.com/?target=https%3A//github.com/jpadilla/pyjwt)）
+（[使用了PyJWT包：pip install pyjwt](https://link.zhihu.com/?target=https%3A//raw.githubusercontent.com/jpadilla/pyjwt)）
 
 ```
 import time

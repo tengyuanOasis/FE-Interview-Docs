@@ -28,7 +28,7 @@
 
 3. 详细流程
 
-![image-20211216134508994](https://gitee.com/JuntengMa/imgae/raw/master/image-20211216134508994.png)
+![image-20211216134508994](https://raw.githubusercontent.com/JuntengMa/image/master/image-20211216134508994.png)
 
 > 当Vue实例创建时，Observe通过`Object.defineProperty`劫持当前已存在的所有属性，并收集与该数据关联的的watcher，当用户取用数据时，调用getter函数，并添加判断有没有订阅者，无则添加watcher， 当用户修改data数据，调用到setter属性，同时调用Dep.notify()通知视图层数据更新，重新编译最新数据，完成视图更新
 
@@ -47,5 +47,5 @@
 > 	3. 待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调，则功成身退
 > - Compile:  <font color="red"> 负责将 el 编译虚拟dom并最终渲染视图</font>
 
-![image-20211217111652559](https://gitee.com/JuntengMa/imgae/raw/master/image-20211217111652559.png)
+![image-20211217111652559](https://raw.githubusercontent.com/JuntengMa/image/master/image-20211217111652559.png)
 

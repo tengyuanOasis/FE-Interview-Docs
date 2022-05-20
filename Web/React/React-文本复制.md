@@ -49,7 +49,7 @@ copyTranslateResult = () => {
     };
 ```
 ## 方案二(推荐该方案，方案一自测ios不兼容)：
-[antd社区精选组件推荐](https://ant.design/docs/react/recommendation-cn): **[react-copy-to-clipboard](https://github.com/nkbt/react-copy-to-clipboard)：**
+[antd社区精选组件推荐](https://ant.design/docs/react/recommendation-cn): **[react-copy-to-clipboard](https://raw.githubusercontent.com/nkbt/react-copy-to-clipboard)：**
 
 #### Install
 ```

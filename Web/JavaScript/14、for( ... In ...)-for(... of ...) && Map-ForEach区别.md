@@ -49,7 +49,7 @@
 
    可能会造成顺序错乱 , [原因](https://juejin.cn/post/6844903555401252871)
 
-   <img src="https://gitee.com/JuntengMa/imgae/raw/master/202202211608715.png" alt="image-20220221160824552" style="zoom:50%;float:left" />
+   <img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202211608715.png" alt="image-20220221160824552" style="zoom:50%;float:left" />
 
 ### 2、for-of
 

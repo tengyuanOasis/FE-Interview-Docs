@@ -75,4 +75,4 @@ function useSelectorWithStoreAndSubscription(
   return selectedState
 }
 ````
-[源码](https://github.com/reduxjs/react-redux)
+[源码](https://raw.githubusercontent.com/reduxjs/react-redux)

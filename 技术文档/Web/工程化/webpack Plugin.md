@@ -1,1 +1,1 @@
-[编写一个Plugin](https://github.com/jantimon/html-webpack-plugin/tree/9b272cfb2bccee98bbe8438c817c4207a0a3cb71#events)
+[编写一个Plugin](https://raw.githubusercontent.com/jantimon/html-webpack-plugin/tree/9b272cfb2bccee98bbe8438c817c4207a0a3cb71#events)

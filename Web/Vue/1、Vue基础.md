@@ -33,9 +33,33 @@
 
 > v-bind
 
+**demo:**
+
+```vue
+     <el-button
+                    :key="item.label"
+                    v-if="item.disabled !== true"
+                    style="margin: 0 5px"
+                    v-bind="item.data"
+                    @click="handleClickHeadBtn(item.params)"
+    >
+    {{ item.label }}
+    </el-button>
+```
+
+```js
+data:{
+    type:'primary',
+    size:"small",
+     ...
+}
+```
+
+
+
 ##### 6、Vue修饰符
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/image-20211104102810965.png" alt="image-20211104102810965" style="zoom:80%;border-radius:20px" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/image-20211104102810965.png" alt="image-20211104102810965" style="zoom:80%;border-radius:20px" />
 
 ##### 7、Vue内置指令
 
@@ -124,7 +148,7 @@
 >
 > 当把js对象传入Vue实例的data，Vue会遍历这个对象所有`property`  ,   `Objec.defineProperty()`把所有的`property`都转为`getter / setter` , 使`property` 在被访问或修改的时候通知变更，然后view更新
 >
-> ![image-20211027170239541](https://gitee.com/JuntengMa/imgae/raw/master/image-20211027170239541.png)
+> ![image-20211027170239541](https://raw.githubusercontent.com/JuntengMa/image/master/image-20211027170239541.png)
 >
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A6%82%E4%BD%95%E8%BF%BD%E8%B8%AA%E5%8F%98%E5%8C%96
 
@@ -251,9 +275,9 @@ inject: {
 
 子组件创建时间： 父组件`beforeMounted` 和 `Mounted`之间
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/image-20211213164116578.png" alt="image-20211213164116578" style="zoom:80%; float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/image-20211213164116578.png" alt="image-20211213164116578" style="zoom:80%; float:left" />
 
-代码： https://github.com/JuntengMa/Vue-test/blob/main/learn-LifeCycle/index.html
+代码： https://raw.githubusercontent.com/JuntengMa/Vue-test/blob/main/learn-LifeCycle/index.html
 
 ##### 18、对象<font color="red">新</font>属性无法更新视图，删除属性无法更新视图，为什么？怎么办？
 
@@ -319,10 +343,10 @@ computed: {
 
 ##### 23、class 与 style 如何动态绑定?
 
-- 动态class对象：`<div :class="{ 'is-active': true, 'red': isRed }"></div>`
-- 动态class数组：`<div :class="['is-active', isRed ? 'red' : '' ]"></div>`
-- 动态style对象：`<div :style="{ color: textColor, fontSize: '18px' }"></div>`
-- 动态style数组：`<div :style="[{ color: textColor, fontSize: '18px' }, { fontWeight: '300' }]"></div>`
+- 动态class**对象**：`<div :class="{ 'is-active': true, 'red': isRed }"></div>`
+- 动态class**数组**：`<div :class="['is-active', isRed ? 'red' : '' ]"></div>`
+- 动态style**对象**：`<div :style="{ color: textColor, fontSize: '18px' }"></div>`
+- 动态style**数组**：`<div :style="[{ color: textColor, fontSize: '18px' }, { fontWeight: '300' }]"></div>`
 
 ##### 26、.sync用法
 
@@ -409,7 +433,7 @@ filters: {
 
 - 什么是diff算法
 
-	> 在页发生大量==重绘==及==回流== 的时候用于计算DOM节点变化，最后只修改发生变化的DOM节点，而不用对整DOM进行更新
+	> 在页发生大量重绘及回流的时候用于计算DOM节点变化，最后只修改发生变化的DOM节点，而不用对整DOM进行更新
 	>
 	> 1. 回流：浏览器重新渲染部分或全部文档的过程
 	> 2. 重绘：当页面中元素<font color="red">样式</font>的改变并不影响它在文档流中的位置时（例如：`color`、`background-color`、`visibility`等），浏览器会将新样式赋予给元素并重新绘制它，这个过程称为重绘。
@@ -464,7 +488,7 @@ filters: {
 
 ##### 32、生命周期
 
-![image-20211213161041290](https://gitee.com/JuntengMa/imgae/raw/master/image-20211213161041290.png)
+![image-20211213161041290](https://raw.githubusercontent.com/JuntengMa/image/master/image-20211213161041290.png)
 
 
 
@@ -505,6 +529,10 @@ export function initState(vm) {
 ##### 34、为什么Vue的==data==是个函数并且返回一个对象呢？
 
 > 当data是个函数的时候，组件每次调用data中的数据，data执行都会返回一个新的对象，防止多处调用造成数据污染
+>
+> vue组件为了保证每个实例上的data数据的独立性，规定了必须使用函数，而不是对象。 因为使用对象的话，每个实例（组件）上使用的data数据是相互影响的，这当然就不是我们想要的了。 对象是对于内存地址的引用，直接定义个对象的话组件之间都会使用这个对象，这样会造成组件之间数据相互影响。
+
+
 
 ##### 35、Vue中为什么可以直接使用`this.name='测试'`直接访问或修改==data==中的数据
 
@@ -585,5 +613,21 @@ https://juejin.cn/post/6984210440276410399#heading-55
         </el-table>
       </el-form>
 
+```
+
+为什么vue先初始化mixin
+
+methods为什么比data更早初始化
+
+
+
+为什么vue中可以直接用this调用methods
+
+通过bind改变function的this指向
+
+```js
+//源码：
+ vm[key] =
+      typeof methods[key] !== "function" ? noop : bind(methods[key], vm);
 ```
 

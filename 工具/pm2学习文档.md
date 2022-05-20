@@ -14,7 +14,7 @@ https://www.kancloud.cn/daiji/pm2/395273
 
 ### 03、PM2官网 
 
-https://github.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
+https://raw.githubusercontent.com/shipengqi/PM2-docs-Zh-CN/blob/master/guide/startup_hook.md
 
 
 

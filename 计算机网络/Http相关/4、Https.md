@@ -24,7 +24,7 @@
 
   - ❗❗❗ 但是该加密方式存在一些漏洞,假如别人获取到了加密方式,然后再用该方案来解密,那数据信息岂不是还是可以被截取修改,因此出现了非对称加密的方案
 
-    ![image-20220213154442752](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220213154442752.png)
+    ![image-20220213154442752](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220213154442752.png)
 
 - 非对称加密
 
@@ -41,7 +41,7 @@
   
   - 非对称加密相对于对称加密安全度是高了一点,但是如果拦截方把数据拦截下来,将自己的数据用拦截下来的公钥加密后返回给发送方,放松方并不能识别出来是不是目标通信对象发来的信息,因此还需要**数字签名**来作保障
   
-  ![image-20220213154503026](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220213154503026.png)
+  ![image-20220213154503026](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220213154503026.png)
 
 ## 4、数字签名
 
@@ -58,9 +58,9 @@
 
 数字证书是由权威机构给某网站颁发的一种认可凭证。它主要包含一些认证信息，比如：对象的名称（服务器、组织、个人等）、过期时间、证书颁发者、来自证书发布者的数字签名。
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220213154553609.png" alt="image-20220213154553609" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220213154553609.png" alt="image-20220213154553609" style="zoom:50%;" />
 
-上面的图片就是www.github.com的证书。
+上面的图片就是www.raw.githubusercontent.com的证书。
 
 我们可以看到在上面讲到数字签名的时候，似乎就可以保证报文的安全了。为什么还需要数字证书呢？这个设想一下这个场景：比如某人A把发送到浏览器的公有密钥进行了替换，同时A在给浏览器发送报文时使用自己的私有密钥对报文进行数字签名，那么浏览器就不能确认报文是否来自于真实服务器。这个时候就可以使用数字证书进行验证，因为数字证书中保存了真实服务器的信息。
 

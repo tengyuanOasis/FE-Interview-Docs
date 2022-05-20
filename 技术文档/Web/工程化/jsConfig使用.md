@@ -17,4 +17,4 @@ jsConfig.json是Vscode下用来处理js文件中显示的一个代码。
 }
 ````
 其中 "module": "commonJS" 必须添加，如果不添加这一样， 默认省略index的文件，就会跳转失败。
-[TS Paths not working with index.ts when using a wildcard - more explained inside #26859](https://github.com/microsoft/TypeScript/issues/26859)
+[TS Paths not working with index.ts when using a wildcard - more explained inside #26859](https://raw.githubusercontent.com/microsoft/TypeScript/issues/26859)

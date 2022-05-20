@@ -15,7 +15,7 @@
 >
 > 最后在虚拟DOM渲染过程中触发自定义指令中的钩子函数，使其生效
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202211830322.png" alt="image-20220221183003249" style="zoom:80%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202211830322.png" alt="image-20220221183003249" style="zoom:80%;float:left" />
 
 > 如图：
 >

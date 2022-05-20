@@ -52,11 +52,11 @@
 
 ### 8、TCP/IP 通信传输流
 
-![image-20220212210823593](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212210823593.png)
+![image-20220212210823593](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212210823593.png)
 
 ### 9、TCP三次握手
 
-![image-20220212211759313](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212211759313.png)
+![image-20220212211759313](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212211759313.png)
 
 > 为了准确无误地将数据送达目标处，TCP 协议采用了三次握手（three-way handshaking）策略。用 TCP 协议把数据包送出去后，TCP不会对传送后的情况置之不理，它一定会向对方确认是否成功送达。
 >
@@ -82,11 +82,11 @@
 >
 > DNS 协议提供通过域名查找 IP 地址，或逆向从 IP 地址反查域名的服务。
 
-![image-20220212212229926](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212212229926.png)
+![image-20220212212229926](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212212229926.png)
 
 10、各协议与Http的关系
 
-![image-20220212212414496](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212212414496.png)
+![image-20220212212414496](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212212414496.png)
 
 11、URI 、URL区别
 

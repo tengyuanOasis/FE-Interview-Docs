@@ -1,6 +1,6 @@
 # Css单位px,rem,em,vw,vh的区别
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/image-20220209174443138.png" alt="image-20220209174443138" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/image-20220209174443138.png" alt="image-20220209174443138" style="zoom:80%;" />
 
 #### **一、`px`**
 
@@ -22,7 +22,7 @@ em是相对长度单位。相对于**<font color="red">当前对象内文本的�
 
 rem是CSS3新增的一个相对单位，rem是<font color="red">**相对于HTML根元素的字体大小**</font>（font-size）来计算的长度单位
 
-![image-20220209173943319](https://gitee.com/JuntengMa/imgae/raw/master/image-20220209173943319.png)
+![image-20220209173943319](https://raw.githubusercontent.com/JuntengMa/image/master/image-20220209173943319.png)
 
 - **优点**：只需要设置根目录的大小就可以把整个页面的成比例的调好
 
@@ -54,7 +54,7 @@ vw、vh、vmax、vmin这四个单位都是基于视口
 
 - vmin和vmax是相对于视口的高度和宽度两者之间的最小值或最大值
 
-![image-20220209174301593](https://gitee.com/JuntengMa/imgae/raw/master/image-20220209174301593.png)
+![image-20220209174301593](https://raw.githubusercontent.com/JuntengMa/image/master/image-20220209174301593.png)
 
 
 

@@ -9,7 +9,7 @@ eggjs 的一些特点/亮点
 很适合作为大规模团队的基础框架，因为明确的规定了目录结构，应用生命周期，按照一套统一的约定进行应用开发，大大降低了研发成员的学习成本。也提供了很多工程工具，如 egg-bin , egg-init, egg-script 等。
 提出了“框架开发”的概念，这点应该是非常有国内互联网大公司特色的。业界几乎每个框架都想做到“大而全”，而内部的开发者都想做到“按需定制”，比如我就想集成自己的登陆/rpc 中间件等。这样非常有利于团队的技术积累沉淀。据我了解腾讯内部已经有好几款基于 eggjs 封装的，非常有技术特色的框架。
 插件机制是非常强的亮点，他并不是简单的“把 koa 中间件改成了 egg-前缀”，而是把每个 web 应用需要的功能抽象为插件，将这些功能对应用的改造（如对上下文/应用本身的增强），以及自身与应用绑定的东西（如根据应用生命周期启动，心跳检测等）都做了功能抽象，也可以通过利用配置来根据不同的场景灵活开关。
-有一只国内比较强的 nodejs 团队专门维护，社区也比较大，可以看看 eggjs github 上的 issue，相信可以学到不少东西，例如各种 rfc讨论 https://github.com/eggjs/egg/issues?q=rfc， 文档也非常全。
+有一只国内比较强的 nodejs 团队专门维护，社区也比较大，可以看看 eggjs github 上的 issue，相信可以学到不少东西，例如各种 rfc讨论 https://raw.githubusercontent.com/eggjs/egg/issues?q=rfc， 文档也非常全。
 
 同样有一些业内非常领先的技术架构设计，如最早基于 master-agent-worker 的模型以及提供的Leader/Follower 模式，这都是在业务中以及参考内部中间件而总结出来的一些最佳实践（https://eggjs.org/zh-cn/advanced/cluster-client.html）。
 总结起来，如果 koa/express 能够给予你基本的 nodejs web 应用的开发体验，eggjs 则会帮助你把 nodejs web 这个技术栈变为团队的基石。

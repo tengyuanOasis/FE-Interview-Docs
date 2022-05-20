@@ -10,11 +10,11 @@
 
 3、什么是事件循环？
 
-https://github.com/JuntengMa/Docs/blob/main/JavaScript/2%E3%80%81js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%EF%BC%88Event%20Loop%EF%BC%89.md
+https://raw.githubusercontent.com/JuntengMa/FE-review-doc/blob/main/Web/JavaScript/2%E3%80%81js%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6%EF%BC%88Event%20Loop%EF%BC%89.md
 
 4、什么是执行栈？
 
-https://github.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F.md
+https://raw.githubusercontent.com/JuntengMa/FE-review-doc/blob/main/Web/JavaScript/3%E3%80%81%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F.md
 
 5、nextTick怎么做到`下次DOM更新周期`执行
 
@@ -22,8 +22,8 @@ https://github.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8F%AF%E6%89
 
 6、源码及备注
 
-https://github.com/JuntengMa/learn-source-code/blob/master/vue/src/core/util/next-tick.js
+https://raw.githubusercontent.com/JuntengMa/learn-source-code/blob/master/vue/src/core/util/next-tick.js
 
 7、nextTick流程
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/image-20220214212138773.png" alt="image-20220214212138773" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/image-20220214212138773.png" alt="image-20220214212138773" style="zoom:50%;" />

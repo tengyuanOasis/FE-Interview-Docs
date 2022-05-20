@@ -10,13 +10,13 @@
 
 #### 3、假设浏览器有一个缓存数据库用于本地缓存，先看看浏览器请求资源的情况：
 
-![image-20220224135545420](https://gitee.com/JuntengMa/imgae/raw/master/202202241355492.png)
+![image-20220224135545420](https://raw.githubusercontent.com/JuntengMa/image/master/202202241355492.png)
 
 #### 4、强制缓存
 
 在浏览器已经缓存数据的情况下，使用强制缓存去请求数据的流程是这样的：
 
-![image-20220224135643725](https://gitee.com/JuntengMa/imgae/raw/master/202202241356816.png)
+![image-20220224135643725](https://raw.githubusercontent.com/JuntengMa/image/master/202202241356816.png)
 
 从流程图可以看到，强制缓存，在缓存数据未失效的情况下，可以直接使用缓存数据，不需要再请求服务器，那么浏览器是如何判断缓存数据是否失效呢？
 对于强制缓存来说，响应header中会有两个字段来标明失效规则（Expires/Cache-Control）：

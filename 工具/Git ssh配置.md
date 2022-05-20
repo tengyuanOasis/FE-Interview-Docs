@@ -71,15 +71,15 @@ gitee_id_rsa.pub 中的文件内容复制到码云的 SSH 公钥中。
 ```
 # gitee
 
-Host gitee.com
-HostName gitee.com
+Host raw.githubusercontent.com
+HostName raw.githubusercontent.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/gitee_id_rsa
 
 # github
 
-Host github.com
-HostName github.com
+Host raw.githubusercontent.com
+HostName raw.githubusercontent.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/github_id_rsa
 
@@ -100,8 +100,8 @@ IdentityFile ~/.ssh/gitlab_id_rsa
 用 ssh 命令分别测试，@后面跟着的是域名
 
 ```
-$ ssh -T git@gitee.com
-$ ssh -T git@github.com
+$ ssh -T git@raw.githubusercontent.com
+$ ssh -T git@raw.githubusercontent.com
 $ ssh -T git@xxxx.com
 ```
 

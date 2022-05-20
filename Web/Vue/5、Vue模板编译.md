@@ -4,7 +4,7 @@
 
 #### 1、模板编译大致分为以下几个步骤：
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/202202241014889.png" alt="image-20220224101456765" style="zoom: 50%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202241014889.png" alt="image-20220224101456765" style="zoom: 50%;float:left" />
 
 1. 通过`parse`函数将template转化为AST语法树
 
@@ -26,7 +26,7 @@
     </div>
    ```
 
-   ![image-20220224103903186](https://gitee.com/JuntengMa/imgae/raw/master/202202241039334.png)
+   ![image-20220224103903186](https://raw.githubusercontent.com/JuntengMa/image/master/202202241039334.png)
 
 #### 2、Parse
 

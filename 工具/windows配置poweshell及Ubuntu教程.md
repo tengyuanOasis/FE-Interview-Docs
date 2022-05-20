@@ -18,9 +18,9 @@
 
 **- 创建完用户之后，重启window powershell，即可看到ubuntu**
 
-​                 ![img](https://gitee.com/JuntengMa/imgae/raw/master/Im9CeCOivMkBIr72cRz-yA)        
+​                 ![img](https://raw.githubusercontent.com/JuntengMa/image/master/Im9CeCOivMkBIr72cRz-yA)        
 
-**- 设置启动项，改完记得保存**                 ![img](https://gitee.com/JuntengMa/imgae/raw/master/Wh-DT1Xi5IBBlr09J1cEDQ)        
+**- 设置启动项，改完记得保存**                 ![img](https://raw.githubusercontent.com/JuntengMa/image/master/Wh-DT1Xi5IBBlr09J1cEDQ)        
 
 **- 设置默认启动目录（按需配置，也可以先不配，有需要再改），改完记得保存**
 
@@ -46,7 +46,7 @@
 2. 1. **安装,基础配置** https://blog.csdn.net/qq_34160841/article/details/104838269
    2. **显示git分支：**https://zhuanlan.zhihu.com/p/133291342
 
-**- 修改bashrc文件（ ）**                  ![img](https://gitee.com/JuntengMa/imgae/raw/master/pLuScGYX10Za2kKyP3Lm4w)        
+**- 修改bashrc文件（ ）**                  ![img](https://raw.githubusercontent.com/JuntengMa/image/master/pLuScGYX10Za2kKyP3Lm4w)        
 
 **-** 直接拖到文件最后，把下面代码贴进去保存并重启（如果没有显示项目git分支，找一下这个文件里面有没有跟下面差不多的代码，删掉即可）
 

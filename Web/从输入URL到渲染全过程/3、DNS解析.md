@@ -15,9 +15,9 @@ DNS解析的过程就是在寻找哪台机器上有你需要的资源的全过�
 #### DNS解析过程
 DNS解析本质上是一个递归查询的过程
 
-![](https://gitee.com/JuntengMa/imgae/raw/master/202202171403053.jpeg)
+![](https://raw.githubusercontent.com/JuntengMa/image/master/202202171403053.jpeg)
 
-![](https://gitee.com/JuntengMa/imgae/raw/master/202202171401104.png)
+![](https://raw.githubusercontent.com/JuntengMa/image/master/202202171401104.png)
 
 上图是查找`www.google.com`这个网址的过程
 1. 在`本地域名服务器`中查询IP地址-->无

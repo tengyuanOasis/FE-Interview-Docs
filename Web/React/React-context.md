@@ -175,7 +175,7 @@ cover: https://images.unsplash.com/photo-1605020419798-46652aa15452?ixlib=rb-1.2
 
   - ![](https://s1.ax1x.com/2020/11/11/BjsLh6.gif)
 
-[demo代码](https://github.com/JuntengMa/react_demo_js)
+[demo代码](https://raw.githubusercontent.com/JuntengMa/react_demo_js)
 
 06/ 注意事项
 

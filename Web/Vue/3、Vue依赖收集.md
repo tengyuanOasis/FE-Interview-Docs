@@ -31,7 +31,7 @@ new Vue({
 });
 ```
 
-按照之前[《响应式原理》](https://github.com/answershuto/learnVue/blob/master/docs/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86.MarkDown)中的方法进行绑定则会出现一个问题——text3在实际模板中并没有被用到，然而当text3的数据被修改（this.text3 = 'test'）的时候，同样会触发text3的setter导致重新执行渲染，这显然不正确。
+按照之前[《响应式原理》](https://raw.githubusercontent.com/answershuto/learnVue/blob/master/docs/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86.MarkDown)中的方法进行绑定则会出现一个问题——text3在实际模板中并没有被用到，然而当text3的数据被修改（this.text3 = 'test'）的时候，同样会触发text3的setter导致重新执行渲染，这显然不正确。
 
 #### 先说说Dep
 
@@ -52,7 +52,7 @@ class Dep {
     removeSub (sub: Watcher) {
         remove(this.subs, sub)
     }
-    /*Github:https://github.com/answershuto*/
+    /*Github:https://raw.githubusercontent.com/answershuto*/
     notify () {
         // stabilize the subscriber list first
         const subs = this.subs.slice()
@@ -84,7 +84,7 @@ class Watcher {
 
         /*在这里将观察者本身赋值给全局的target，只有被target标记过的才会进行依赖收集*/
         Dep.target = this;
-        /*Github:https://github.com/answershuto*/
+        /*Github:https://raw.githubusercontent.com/answershuto*/
         /*触发渲染操作进行依赖收集*/
         this.cb.call(this.vm);
     }
@@ -133,4 +133,4 @@ Dep.target = null;
 
 
 
-https://github.com/answershuto/learnVue/blob/master/docs/%E4%BE%9D%E8%B5%96%E6%94%B6%E9%9B%86.MarkDown
+https://raw.githubusercontent.com/answershuto/learnVue/blob/master/docs/%E4%BE%9D%E8%B5%96%E6%94%B6%E9%9B%86.MarkDown

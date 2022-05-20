@@ -15,9 +15,9 @@
 >
 > 由协议版本、状态码（表示请求成功或失败的数字代码）、用以解释状态码的原因短语、可选的响应首部字段以及实体主体构成。
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212213553880.png" alt="image-20220212213553880" style="zoom: 80%; float: left;" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212213553880.png" alt="image-20220212213553880" style="zoom: 80%; float: left;" />
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212213602946.png" alt="image-20220212213602946" style="zoom: 80%; float: left;" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212213602946.png" alt="image-20220212213602946" style="zoom: 80%; float: left;" />
 
 ##### http协议状态
 
@@ -33,7 +33,7 @@
 
 ##### http协议方法
 
-![image-20220212214234253](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212214234253.png)
+![image-20220212214234253](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212214234253.png)
 
 ##### Cookie技术
 
@@ -41,9 +41,9 @@
 >
 > - 保留无状态协议这个特征的同时又要解决类似的矛盾问题，于是引入了 Cookie 技术。Cookie 技术通过在请求和响应报文中写入 Cookie 信息来控制客户端的状态。
 
-![image-20220212214951883](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212214951883.png)
+![image-20220212214951883](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212214951883.png)
 
-![image-20220212215005056](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212215005056.png)
+![image-20220212215005056](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212215005056.png)
 
 
 
@@ -57,7 +57,7 @@
 >
 > 持久连接的特点是，只要任意一端没有明确提出断开连接，则保持 TCP 连接状态。
 
-![image-20220212214539242](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212214539242.png)
+![image-20220212214539242](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212214539242.png)
 
 > 持久连接的好处在于减少了 TCP 连接的重复建立和断开所造成的额外开销，减轻了服务器端的负载。
 >
@@ -71,7 +71,7 @@
 
 管线化技术出现后，不用等待响应亦可直接发送下一个请求，这样就能够做到同时并行发送多个请求，而不需要一个接一个地等待响应了。
 
-![image-20220307170057947](https://gitee.com/JuntengMa/imgae/raw/master/202203071701168.png)
+![image-20220307170057947](https://raw.githubusercontent.com/JuntengMa/image/master/202203071701168.png)
 
 比如，当请求一个包含 10 张图片的 HTML Web 页面，与挨个连接相比，用持久连接可以让请求更快结束。而管线化技术则比持久连接还要快。请求数越多，时间差就越明显。
 
@@ -89,7 +89,7 @@
 
 ##### Http状态码
 
-![image-20220212215847589](https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220212215847589.png)
+![image-20220212215847589](https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220212215847589.png)
 
 | 状态码 | 原因                                                         |
 | ------ | ------------------------------------------------------------ |

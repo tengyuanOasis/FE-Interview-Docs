@@ -98,7 +98,7 @@ tcp没有断开，用的同一个通道
 
 👉怎么解决解决队头阻塞的问题?
 
-<img src="https://gitee.com/JuntengMa/imgae/raw/master/image/image-20220507145054676.png" alt="image-20220507145054676" style="zoom:33%;float:left" />
+<img src="https://raw.githubusercontent.com/JuntengMa/image/master/image/image-20220507145054676.png" alt="image-20220507145054676" style="zoom:33%;float:left" />
 
 > 实际上，现阶段的浏览器厂商采取了另外一种做法，它允许我们打开多个TCP的会话。
 > 也就是说，上图我们看到的并行，其实是不同的TCP连接上的HTTP请求和响应。这也就是我们所熟悉的浏览器对同域下并行加载6~8个资源的限制。而这，才是真正的并行！

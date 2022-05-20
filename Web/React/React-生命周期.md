@@ -14,7 +14,7 @@ cover: https://images.unsplash.com/photo-1604573798783-6b5fb01260f9?ixlib=rb-1.2
 
 #### 17以前
 
-![](https://gitee.com/JuntengMa/imgae/raw/master/view)
+![](https://raw.githubusercontent.com/JuntengMa/image/master/view)
 
 #### 17版本
 
