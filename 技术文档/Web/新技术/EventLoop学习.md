@@ -1,6 +1,0 @@
-[JavaScript 运行机制详解：再谈Event Loop](https://www.ruanyifeng.com/blog/2014/10/event-loop.html)
-[微任务、宏任务与Event-Loop](https://juejin.cn/post/6844903657264136200)
-[在 JavaScript 中通过 queueMicrotask() 使用微任务](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide)
-[EventLoop的区别](https://juejin.cn/post/6844903761949753352)
-[深入理解NodeJS事件循环机制](https://juejin.cn/post/6844903999506923528)
-[***](https://developer.ibm.com/zh/tutorials/learn-nodejs-the-event-loop/)

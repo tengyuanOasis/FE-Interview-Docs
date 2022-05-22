@@ -1,1 +1,0 @@
-[脚本：async，defer](https://zh.javascript.info/script-async-defer#async)

@@ -1,16 +1,3 @@
----
-cover: https://source.unsplash.com/random?count=6/1600x900
-coverWidth: 1200
-coverHeight: 750
-title: JSONP跨域请求及其原理
-categories: Ajax 
-tags: JSONP 
-top:
----
-JSONP及其原理
-
-<!--more-->
-
 ##### 1、JSONP的产生
 
 **背景:**
