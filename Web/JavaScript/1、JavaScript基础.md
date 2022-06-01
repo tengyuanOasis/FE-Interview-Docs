@@ -35,7 +35,7 @@ JavaScript基础
   >      ```js
   >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
   >      let sym = Symbol(); console.log(typeof sym); // symbol 
-  >                                         
+  >                                                   
   >      //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
   >      let genericSymbol = Symbol();
   >      let otherGenericSymbol = Symbol(); 
@@ -258,7 +258,7 @@ Object.prototype.toString.call(Array)  //"[object Function]"
 > 01/ 原型:
 > -	Js中我们使用构造函数来新建对象的
 > -	每个构造函数内部都有一个prototype属性,这个属性值是一个对象,包含了可以由该构造函数共享的实例和方法
-> - 我们使用构造函数新建一个对象后,这个对象内部有一个`__proto__`指针,可以指向构造函数prototype属性对应的值,es5中我们一般称他为对象的原型 浏览器可以通过`__proto__`值来获取,也可以用Object.getPrototypeOf()找到对象的原型
+> - 我们使用构造函数实例化一个对象后,这个对象内部有一个`__proto__`指针,可以指向构造函数prototype属性对应的值,es5中我们一般称他为对象的原型 浏览器可以通过`__proto__`值来获取,也可以用Object.getPrototypeOf()找到对象的原型
 >
 > 02/ 原型链:
 > - 当我们访问一个对象的属性时,如果这个对象里面不存在该属性的时候,那么就会到这个对象的原型对象中找这个属性,就这样一层层的找就构成了原型链,最后找到Object.proptotype,如果还没找到就会返回null.
@@ -277,6 +277,8 @@ Object.prototype.toString.call(Array)  //"[object Function]"
 #### 12 、闭包
 
 [《闭包》](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/4%E3%80%81%E9%97%AD%E5%8C%85.md)
+
+闭包本质就是上级作用域内变量的生命周期，因为被下级作用域内引用，而没有被释放。就导致上级作用域内的变量，等到下级作用域执行完以后才正常得到释放
 
 #### 13、继承
 
@@ -410,7 +412,7 @@ Object.prototype.toString.call(Array)  //"[object Function]"
     }
     foo(); // undefined
     
-    之所以不会报错，是因为ECMAScript运行时把它看成等价于如下代码：
+    /之所以不会报错，是因为ECMAScript运行时把它看成等价于如下代码：
     function foo() {
       var age;   
       console.log(age);   
@@ -442,10 +444,18 @@ Object.prototype.toString.call(Array)  //"[object Function]"
 
   - const声明常量，且不可修改
 
-#### 18、js声明变量的步骤
+#### 19、Null和Undefined的异同点
 
-> js变量声明有两个步骤
+> 相同点:
 >
-> 1. 编译器会在当前作用域声明一个变量
-> 2. 运行时js引擎会在作用域中查找这个变量，如果能找到就会对其赋值
+> - 都是js基本数据类型，两个基本数据类型都只有一个值，null、和undefined
+>
+> 区别：
+>
+> - undefined代表未定义，一般声明了但是未赋值(定义)的时候会返回undefined；
+> - null主要作为一个初始值赋值给变量，作为初始化；
+> - `typeof undefined ` //undefined
+> - `typeof null` //object
+
+
 

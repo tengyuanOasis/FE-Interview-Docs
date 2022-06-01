@@ -352,3 +352,6 @@ componentWillReceiveProps。
 > 3. 可以：
 >    ✅ 在 React 的函数组件中调用 Hook
 >    ✅ 在自定义 Hook 中调用其他 Hook
+
+9、Hoot的极限
+

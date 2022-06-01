@@ -14,8 +14,6 @@ cover: https://source.unsplash.com/random?count=8/1600x900
 
 ## 方案一：
 
-
-
 ```js
 copyTranslateResult = () => {
         const copyDOM = document.querySelector('.translateResult');

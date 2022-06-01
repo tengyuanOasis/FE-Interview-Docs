@@ -78,16 +78,14 @@ data:{
 > -	通过`this.$emit(‘xxxxx’,paload)`
 > -	$refs 获取组件实例
 
->
-> 3、兄弟组件：
->
-> -	eventbus处理
+>3、兄弟组件：
+> 
+>-	eventbus处理
 > -	通过公共上层组件传递
 
->
-> 4、使用Vuex全局状态管理
->
-> 5、本地缓存
+>4、使用Vuex全局状态管理
+> 
+>5、本地缓存
 
 ##### 9、Eventbus原理及优缺点
 
@@ -242,8 +240,8 @@ data:{
 
 Demo:
 
- >#parent
 ```js
+//parent component
 provide: function () {
     return {
     getMap: this.getMap,  //这样写是非响应式，provide数据变化，inject不会更新数据
@@ -252,9 +250,9 @@ provide: function () {
 }
 ````
 
->#children
-
 ```js
+//child component
+
 inject: ['getMap']
 
 # or
@@ -350,14 +348,14 @@ computed: {
 
 ##### 26、.sync用法
 
-> # parent 👇
+parent 👇
 
 ```vue
 
 <dialog :visible.sync="dialogVisible" />
 ```
 
-> # child 👇
+child 👇
 
 ```vue
 <el-dialog title="xxxx" :visible="visible" @close="close" />
@@ -433,11 +431,15 @@ filters: {
 
 - 什么是diff算法
 
-	> 在页发生大量重绘及回流的时候用于计算DOM节点变化，最后只修改发生变化的DOM节点，而不用对整DOM进行更新
-	>
-	> 1. 回流：浏览器重新渲染部分或全部文档的过程
-	> 2. 重绘：当页面中元素<font color="red">样式</font>的改变并不影响它在文档流中的位置时（例如：`color`、`background-color`、`visibility`等），浏览器会将新样式赋予给元素并重新绘制它，这个过程称为重绘。
-	> 3. 详细： https://juejin.cn/post/6844903569087266823
+  > 在页发生大量重绘及回流的时候用于计算DOM节点变化，最后只修改发生变化的DOM节点，而不用对整DOM进行更新
+  >
+  > 1. 回流：浏览器重新渲染部分或全部文档的过程
+  >
+  >    如页面重新渲染、修改元素大小位置等
+  >
+  > 2. 重绘：当页面中元素<font color="red">样式</font>的改变并不影响它在文档流中的位置时（例如：`color`、`background-color`、`visibility`等），浏览器会将新样式赋予给元素并重新绘制它，这个过程称为重绘。
+  >
+  > 3. 详细： https://juejin.cn/post/6844903569087266823
 
 - 原理
 
@@ -530,7 +532,11 @@ export function initState(vm) {
 
 > 当data是个函数的时候，组件每次调用data中的数据，data执行都会返回一个新的对象，防止多处调用造成数据污染
 >
-> vue组件为了保证每个实例上的data数据的独立性，规定了必须使用函数，而不是对象。 因为使用对象的话，每个实例（组件）上使用的data数据是相互影响的，这当然就不是我们想要的了。 对象是对于内存地址的引用，直接定义个对象的话组件之间都会使用这个对象，这样会造成组件之间数据相互影响。
+> vue组件为了保证每个实例上的data数据的独立性，规定了必须使用函数，而不是对象。 因为使用对象的话，每个实例（组件）上使
+>
+> 用的data数据是相互影响的，这当然就不是我们想要的了。 对象是对于内存地址的引用，直接定义个对象的话组件之间都会使用这
+>
+> 个对象，这样会造成组件之间数据相互影响。
 
 
 
