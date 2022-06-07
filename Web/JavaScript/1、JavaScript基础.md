@@ -23,19 +23,19 @@ JavaScript基础
   > 5. **String**: 
   >    - String 用于表示文本数据。String 有最大长度是 2^53 - 1，因为 String 的意义并非“字符串”，而是字符串的 UTF16 编码，我们字符串的操作 charAt、charCodeAt、length 等方法针对的都是 UTF16 编码。所以，字符串的最大长度，实际上是受字符串的编码长度影响的。
   > 6. **Symbol**:  
-  >    
+  >
   >    - Symbol（符号）是ECMAScript 6新增的数据类型。符号是原始值，且符号实例是**唯一、不可变的**。符号的用途是确保对象属性使用唯一标识符，不会发生属性冲突的危险。
-  >    
+  >
   >    - 使用：
-  >    
+  >
   >    - https://juejin.cn/post/6844903812046520328
-  >    
+  >
   >    - https://cloud.tencent.com/developer/article/1191039
-  >    
+  >
   >      ```js
   >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
   >      let sym = Symbol(); console.log(typeof sym); // symbol 
-  >                                                   
+  >      
   >      //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
   >      let genericSymbol = Symbol();
   >      let otherGenericSymbol = Symbol(); 
@@ -44,14 +44,15 @@ JavaScript基础
   >      console.log(genericSymbol == otherGenericSymbol);  // false 
   >      console.log(fooSymbol == otherFooSymbol);          // false 
   >      ```
-  >    
-  >      
+  >
+  >
   > 7. **bigInt**
-  >    
+  >
   >    - **`BigInt`** 是一种内置对象，它提供了一种方法来表示大于 `2^53 - 1` 的整数。这原本是 Javascript中可以用 [`Number`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number) 表示的最大数字。**`BigInt`** 可以表示任意大的整数。
+  >    - **`BigInt`** 可以表示任意大的整数
   >    - 不能用于 [`Math`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math) 对象中的方法；
   >    - 不能和任何 [`Number`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number) 实例混合运算，两者必须转换成同一种类型。
-  >    - 可以直接在常规 Number 后面增加一个字符 `n` 表示一个 BigInt
+  >    - 可以直接在常规 Number 后面增加一个字符 `n` 表示一个 BigInt。
 
 - **引用数据类型:**
 

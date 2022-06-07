@@ -10,7 +10,7 @@
 
 2. 优化AST，性能优化
 
-3. 根据AST生成可执行代码 render 
+3. 根据AST生成可执行代码 render  和 staticRenderFns
 
    如下代码，编译后如图
 

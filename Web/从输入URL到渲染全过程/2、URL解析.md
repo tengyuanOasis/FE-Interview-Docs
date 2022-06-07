@@ -30,7 +30,7 @@
 
 ### 2、缓存检查
 
-![](https://raw.githubusercontent.com/JuntengMa/image/master/202202171355683.webp)
+![](https://raw.githubusercontent.com/Teri-ma/image/master/202202171355683.webp)
 
 浏览器会先去查看强缓存（Expires和cache-control）判断是否过期，如果强缓存生效，直接从缓存中读取资源；
 
@@ -42,5 +42,5 @@
 
 详细可以看[《》]()
 
-![image-20220217135238034](https://raw.githubusercontent.com/JuntengMa/image/master/202202171352110.png)
+![image-20220217135238034](https://raw.githubusercontent.com/Teri-ma/image/master/202202171352110.png)
 

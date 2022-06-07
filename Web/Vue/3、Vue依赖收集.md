@@ -39,8 +39,35 @@ new Vue({
 
 定义一个依赖收集类Dep。
 
-```javascript
-  xxxxxxxxxx class Dep {    constructor () {        this.subs = [];    }    addSub (sub: Watcher) {        this.subs.push(sub)    }    removeSub (sub: Watcher) {        remove(this.subs, sub)    }    /*Github:https://raw.githubusercontent.com/answershuto*/    notify () {        // stabilize the subscriber list first        const subs = this.subs.slice()        for (let i = 0, l = subs.length; i < l; i++) {            subs[i].update()        }    }}function remove (arr, item) {    if (arr.length) {        const index = arr.indexOf(item)        if (index > -1) {            return arr.splice(index, 1)        }    }}
+```js
+   class Dep {
+	constructor() {
+		this.subs = [];
+	}
+	addSub(sub: Watcher) {
+		this.subs.push(sub);
+	}
+	removeSub(sub: Watcher) {
+		remove(this.subs, sub);
+	}
+	/*Github:https://raw.githubusercontent.com/answershuto*/
+	notify() {
+		// stabilize the subscriber list first
+		const subs = this.subs.slice();
+		for (let i = 0, l = subs.length; i < l; i++) {
+			subs[i].update();
+		}
+	}
+}
+function remove(arr, item) {
+	if (arr.length) {
+		const index = arr.indexOf(item);
+		if (index > -1) {
+			return arr.splice(index, 1);
+		}
+	}
+}
+
 ```
 
 #### Watcher
