@@ -11,10 +11,12 @@ JavaScript基础
   > 1. **Undefined**： 
   >    - Undefined 类型表示未定义，任何变量在赋值前是 Undefined 类型、值为 undefined。
   > 2. **Null**
+  >    
   >    - 空对象指针，故typeof null会返回object，Null 表示的是：“==定义了但是为空==”，所以，在实际编程时，一般把变量赋值为 null。
   > 3. **Boolean** 
   >    - true / false。
   > 4. **Number**
+  >   
   >   - 浮点数(demo： 数值必须有小数的数，1.1；0.1等)
   >   - 数值范围[Number.MIN_VALUE,Number.MAX_VALUE]
   >   - NAN(not a number)
@@ -35,7 +37,7 @@ JavaScript基础
   >      ```js
   >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
   >      let sym = Symbol(); console.log(typeof sym); // symbol 
-  >      
+  >           
   >      //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
   >      let genericSymbol = Symbol();
   >      let otherGenericSymbol = Symbol(); 
@@ -76,7 +78,7 @@ JavaScript基础
 
   - typeof: 直接返回数据类型字段，但是无法判断数组、null、对象(均返回 object)
 
-  - [instanceof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof): 检查实例的原型链中是否包含指定构造函数的原型：
+  - [instanceof](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof): 检查  **实例**的原型链中是否包含指定**构造函数**的原型：
 
     [解析](https://juejin.cn/post/6844903613584654344)
 
@@ -86,17 +88,19 @@ JavaScript基础
     console.log(Person.prototype instanceof Object);  // true 
     ```
 
-    - `Object.prototype.toString.call()`: [解析](https://zhuanlan.zhihu.com/p/118793721)
+  - `Object.prototype.toString.call()`: 
 
-    |                        | typeof      | instanceof                       | Object.prototype.toString.call() |
-    | ---------------------- | ----------- | -------------------------------- | -------------------------------- |
-    | var test = 'kangkang'; | `string`    | test instanceof String `//false` | `[object String]`                |
-    | var test = 123;        | `number`    | test instanceof Number`//false`  | `[object Number]`                |
-    | var test = true;       | `boolean`   | test instanceof Boolean`//false` | `[object Boolean]`               |
-    | var test = undefined;  | `undefined` | test instanceof Object `//false` | `[object Undefined]`             |
-    | var test = null;       | `object`    | test instanceof Object`//false`  | `[object Null]`                  |
-    | var test = {};         | `object`    | test instanceof Object`//true`   | `[object Object]`                |
-    | var test(){ };         | `function`  | test instanceof Object`//true`   | `[object Function]`              |
+      [解析](https://zhuanlan.zhihu.com/p/118793721)
+
+  |                        | typeof      | instanceof                       | Object.prototype.toString.call() |
+  | ---------------------- | ----------- | -------------------------------- | -------------------------------- |
+  | var test = 'kangkang'; | `string`    | test instanceof String `//false` | `[object String]`                |
+  | var test = 123;        | `number`    | test instanceof Number`//false`  | `[object Number]`                |
+  | var test = true;       | `boolean`   | test instanceof Boolean`//false` | `[object Boolean]`               |
+  | var test = undefined;  | `undefined` | test instanceof Object `//false` | `[object Undefined]`             |
+  | var test = null;       | `object`    | test instanceof Object`//false`  | `[object Null]`                  |
+  | var test = {};         | `object`    | test instanceof Object`//true`   | `[object Object]`                |
+  | var test(){ };         | `function`  | test instanceof Object`//true`   | `[object Function]`              |
 
 #### 02 、什么是堆/栈?
 
@@ -220,19 +224,17 @@ JavaScript基础
 
 #### 06 、 JavaScript 可执行上下文
 
-[《JavaScript 可执行上下文》](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8F%AF%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%8A%E4%BD%9C%E7%94%A8%E5%9F%9F.md)
-
 > js指向变量或函数时，会生成一个与该变量或函数相关的执行环境，这个执行环境就是可执行上下文
 >
 > 可执行上下文规定了该变量或者函数可访问的变量及他们的行为
 
 #### 07 、 JavaScript 在浏览器中如何执行的
 
-<a href="/2020/09/22/JavaScript/04%20-%20JavaScript-一段js代码在浏览器中是如何执行的/" target="_blank"><<JavaScript 在浏览器中如何执行的>></a>
+
 
 #### 08 、 从输入 url 到页面加载过程
 
-<a href="/2020/10/26/JavaScript/06%20-%20从输入url到页面加载过程/" target="_blank"><<从输入 url 到页面加载过程>></a>
+
 
 #### 09 、 内部属性[[class]]是什么
 
@@ -273,17 +275,13 @@ Object.prototype.toString.call(Array)  //"[object Function]"
 > - 实现继承
 > - 共享我们的一些实例和方法
 
-[<<JavaScript 原型原型链>>](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/3%E3%80%81%E5%8E%9F%E5%9E%8B%E5%8E%9F%E5%9E%8B%E9%93%BE.md)
+
 
 #### 12 、闭包
 
-[《闭包》](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/4%E3%80%81%E9%97%AD%E5%8C%85.md)
-
-闭包本质就是上级作用域内变量的生命周期，因为被下级作用域内引用，而没有被释放。就导致上级作用域内的变量，等到下级作用域执行完以后才正常得到释放
+> 闭包本质就是上级作用域内变量的生命周期，因为被下级作用域内引用，而没有被释放。就导致上级作用域内的变量，等到下级作用域执行完以后才正常得到释放
 
 #### 13、继承
-
-[<<JavaScript 继承>>](https://raw.githubusercontent.com/JuntengMa/Docs/blob/main/JavaScript/5%E3%80%81js%E7%BB%A7%E6%89%BF%E6%96%B9%E5%BC%8F.md)
 
 [<<JavaScript 深入之继承的多种方式和优缺点>>](https://raw.githubusercontent.com/mqyqingfeng/Blog/issues/16)
 
@@ -458,5 +456,160 @@ Object.prototype.toString.call(Array)  //"[object Function]"
 > - `typeof undefined ` //undefined
 > - `typeof null` //object
 
+#### 20、isNaN 与 Number.isNaN的区别
 
+[详细文档](https://nicholaslee119.github.io/2017/10/30/windowIsNan%E5%92%8CnumberIsNan%E7%9A%84%E5%8C%BA%E5%88%AB/)
+
+1. isNaN ==>  is not a numner ,  在判断非number类型，如String、Object等也会返回true
+2. Number.isNaN ===> 只判断是否是NaN 
+
+
+
+![image-20220614175237830](https://raw.githubusercontent.com/TeriMvp/image/master/image/image-20220614175237830.png)
+
+21、[Js中变量提升及函数提升](https://segmentfault.com/a/1190000038344251)
+
+> ##### js执行代码分两个阶段
+>
+> 1. 语法词法分析阶段（预编译阶段）
+> 2. 执行阶段
+>
+> ##### 变量提升
+>
+> 1. 只有**声明**被提升，**初始化**不会被提升（赋值不会提升）
+> 2. 声明会被提升到当前作用域的顶端
+>
+> ##### 函数提升
+>
+> 1. 函数声明和初始化都会被提升
+>
+>    例子1：函数声明可被提升
+>
+>    ```javascript
+>    console.log(square(5)); // 25
+>    function square(n) {
+>      return n * n;
+>    }
+>    ```
+>
+>    预编译后
+>
+>    ```javascript
+>    function square = (n) {
+>      return n * n;
+>    }
+>    console.log(square(5)); // 25
+>    ```
+>
+>    
+>
+> 2. 函数表达式不会被提升
+>
+>    例子2：函数表达式不可被提升
+>
+>    ```javascript
+>    console.log(square); // undefined
+>    console.log(square(5)); // square is not a function =》 初始化并未提升，此时 square 值为 undefined
+>    var square = function (n) { 
+>      return n * n; 
+>    }
+>    ```
+>
+>    预编译后
+>
+>    ```javascript
+>    var square
+>    console.log(square); // undefined =》赋值没有被提升
+>    console.log(square(5)); // square is not a function =》 square 值为 undefined 故报错
+>    square = function (n) { 
+>      return n * n; 
+>    }
+>    ```
+>
+
+#### 21、Js中箭头函数，声明式函数、普通函数的区别
+
+> 箭头函数：const test =  ()=>{}
+>
+> 声明式函数： const test = function(){}
+>
+> 普通函数：function test（）{}
+
+箭头函数：
+
+> - 箭头函数无arguments对象
+> - 箭头函数内部的this与其自身的调用无关系，与它上层（声明位置）this指向相同。
+> - 箭头函数无prototype属性，无法作为构造函数
+
+声明式函数：
+
+> - 函数表达式不可被提升
+
+#### 22、Promise.all、Promise.allSettled的区别
+
+- 两者主要是在遇到什么情况就返回上的区别。 
+- Promise.all 在全部给定promise全部resolve或者某个reject的时候就会返回结果。
+- Promsie.allSettled在所有给定的promise都已经fullfilled或rejeced后的promise，并带有一个数组，每个对象对应promise的结果。
+
+看示例：
+
+- **Promise.all 给定promise全部resolve**
+
+```javascript
+const p = Promise.all([1,2,3]);
+// p是一个promise对象，状态是fulfilled
+```
+
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/71397eaede52420caba7d54639644d6a~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?) 
+
+- **Promise.all 给定的promise其中一个reject**
+
+```javascript
+// 此时会报错，因为没有对异常进行处理
+const p2 = Promise.all([1,Promise.reject(2),3]);
+
+const p2 = Promise.all([1,Promise.reject(2),3]).catch(err => console.log(err));
+```
+
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fee077f32526432da070e4153d6bc1f9~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
+
+**Promise.allSettled 给定promise全部resolve**
+
+```javascript
+// p3是一个promise对象，状态是fulfilled
+const p3 = Promise.allSettled([1,2,3]);
+```
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f94dcb63d04d4fdfa57d153f25a0ae0a~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
+
+**Promise.allSettled 给定的promise其中一个reject**
+
+```javascript
+// p4是一个promise对象，状态是fulfilled
+const p4 = Promise.allSettled([1, Promise.reject(2), 3]);
+```
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/bb060f02cba94382b4cbbb6c8a3a1707~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
+
+- **promise.all中第2个promise，reject，第3个promise还会执行么?**
+
+会执行。
+
+```javascript
+const p1 = new Promise(resolve => {
+    console.log('promise1');
+    resolve('promise1')
+});
+const p2 = new Promise((resolve, reject) => {
+    console.log('promise2');
+    reject('promise2 error')
+});
+const p3 = new Promise(resolve => {
+    console.log('promise2');
+    resolve('promise3')
+});
+Promise.all([p1, p2, p3]);
+```
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/69ea606052d446dda71dc69a992c0be8~tplv-k3u1fbpfcp-zoom-in-crop-mark:1304:0:0:0.awebp?)
 

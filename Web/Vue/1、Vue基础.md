@@ -621,6 +621,12 @@ https://juejin.cn/post/6984210440276410399#heading-55
 
 ```
 
+
+
+##### 37、keep-alive原理
+
+> https://juejin.cn/post/6844903837770203144
+
 为什么vue先初始化mixin
 
 methods为什么比data更早初始化

@@ -22,7 +22,7 @@ Gulp 则一种前端工作流的工具，帮忙实现业务过程的自动化。
 
 ### 03、Gulp Demo？
 
-```
+```js
 const gulp = require('gulp');
 const del = require('del');
 const zip = require('gulp-zip');
