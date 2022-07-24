@@ -1,6 +1,7 @@
 ### Lithium template
 libraries/*
 resources/tmp/*
+/node_modules
 
 ### R template
 # History files
