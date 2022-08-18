@@ -1,0 +1,16 @@
+{
+  "name": "doc",
+  "version": "1.0.0",
+  "description": "> An awesome project.",
+  "main": "createNav.js",
+  "scripts": {
+    "dev": "docsify serve",
+    "init": "node ./createNav.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
