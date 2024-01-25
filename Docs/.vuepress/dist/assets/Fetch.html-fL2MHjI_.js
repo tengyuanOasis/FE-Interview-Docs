@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-7af27a40","path":"/Web/JavaScript/Ajax/Fetch.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/JavaScript/Ajax/Fetch.md"}');export{t as data};

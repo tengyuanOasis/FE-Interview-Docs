@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as n,b as l}from"./app-iph3vjA0.js";const o={},c=l("p",null,"1、如何理解html语义化",-1),s=l("blockquote",null,[l("ul",null,[l("li",null,"增加代码可读性"),l("li",null,"方便搜索引擎读取页面内容，有助于网络爬虫读取网页信息"),l("li",null,"在css未加载之前也能很好的展现页面结构")])],-1),_=[c,s];function u(r,a){return t(),n("div",null,_)}const m=e(o,[["render",u],["__file","Html.html.vue"]]);export{m as default};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1bee75be","path":"/Web/JavaScript/4、yuanxingyuanxinglian.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/JavaScript/4、原型原型链.md"}');export{e as data};

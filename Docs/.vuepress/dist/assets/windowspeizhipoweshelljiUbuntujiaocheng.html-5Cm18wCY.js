@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-18948404","path":"/gongju/windowspeizhipoweshelljiUbuntujiaocheng.html","title":"windows 配置 poweshell 及 Ubuntu 教程","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"工具/windows配置poweshell及Ubuntu教程.md"}');export{e as data};

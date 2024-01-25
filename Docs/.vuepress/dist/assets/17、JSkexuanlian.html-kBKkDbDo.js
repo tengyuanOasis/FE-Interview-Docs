@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-54b11254","path":"/Web/JavaScript/17、JSkexuanlian.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[{"level":3,"title":"Js可选链","slug":"js可选链","link":"#js可选链","children":[]}],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/JavaScript/17、JS可选链.md"}');export{e as data};

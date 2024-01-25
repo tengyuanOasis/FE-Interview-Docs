@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-183a2ba4","path":"/Web/JavaScript/6、bibao.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/JavaScript/6、闭包.md"}');export{t as data};

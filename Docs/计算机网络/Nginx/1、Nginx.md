@@ -131,6 +131,14 @@ sbin: 是存放执行程序文件nginx
 nginx: 是用来控制Nginx的启动和停止等相关的命令。
 ```
 
+8.添加nginx为全局命令
+
+```shell
+ln -s /home/nginx/sbin/nginx /usr/local/bin/nginx
+```
+
+
+
 ## 四、nginx常用命令
 
 1. 常见2种启动命令

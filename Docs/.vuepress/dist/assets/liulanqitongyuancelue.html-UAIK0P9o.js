@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-17ff2d68","path":"/liulanqi/liulanqitongyuancelue.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"同源策略","slug":"同源策略","link":"#同源策略","children":[]}],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"浏览器/浏览器同源策略.md"}');export{e as data};

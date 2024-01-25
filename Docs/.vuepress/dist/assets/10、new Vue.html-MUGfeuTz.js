@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-ab88c224","path":"/Web/Vue/10、new Vue.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/Vue/10、new Vue.md"}');export{e as data};

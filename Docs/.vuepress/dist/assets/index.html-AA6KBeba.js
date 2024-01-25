@@ -1,0 +1,1 @@
+import{_ as e,o as t,c,b as s}from"./app-iph3vjA0.js";const n={},o=s("p",null,"This is React",-1),_=[o];function a(r,i){return t(),c("div",null,_)}const d=e(n,[["render",a],["__file","index.html.vue"]]);export{d as default};

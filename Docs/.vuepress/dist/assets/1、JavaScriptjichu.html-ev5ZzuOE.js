@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-69c48123","path":"/Web/JavaScript/1、JavaScriptjichu.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/JavaScript/1、JavaScript基础.md"}');export{t as data};

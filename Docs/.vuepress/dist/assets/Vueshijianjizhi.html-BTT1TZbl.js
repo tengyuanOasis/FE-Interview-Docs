@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5f5674e9","path":"/Web/Vue/Vueshijianjizhi.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[{"level":3,"title":"Vue 事件机制","slug":"vue-事件机制","link":"#vue-事件机制","children":[]}],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/Vue/Vue事件机制.md"}');export{e as data};

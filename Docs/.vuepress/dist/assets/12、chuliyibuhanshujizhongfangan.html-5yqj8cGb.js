@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-24f83c6d","path":"/Web/JavaScript/12、chuliyibuhanshujizhongfangan.html","title":"JS处理异步函数几种方案","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/JavaScript/12、处理异步函数几种方案.md"}');export{t as data};

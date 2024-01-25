@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-f1a7f63e","path":"/Web/JavaScript/6、jicheng.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/JavaScript/6、继承.md"}');export{e as data};

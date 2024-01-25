@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-76fc560a","path":"/Web/Vue/7、Vnode.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"Vnode","slug":"vnode","link":"#vnode","children":[]}],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/Vue/7、Vnode.md"}');export{e as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-0fc381ac","path":"/Web/Vue/8、Vue-Directive.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[{"level":3,"title":"自定义指令","slug":"自定义指令","link":"#自定义指令","children":[]}],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/Vue/8、Vue-Directive.md"}');export{e as data};

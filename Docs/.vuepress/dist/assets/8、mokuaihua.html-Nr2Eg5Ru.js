@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-b5f90856","path":"/Web/JavaScript/8、mokuaihua.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/JavaScript/8、模块化.md"}');export{t as data};

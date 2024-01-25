@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-7ed7f902","path":"/gongju/linux.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"工具/linux.md"}');export{t as data};

@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-75be764e","path":"/Web/youhua/yewudaimayouhua/JavaScriptdaimayouhua.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"createdTime":null,"updatedTime":null,"contributors":[]},"filePathRelative":"Web/优化/业务代码优化/JavaScript代码优化.md"}');export{a as data};
