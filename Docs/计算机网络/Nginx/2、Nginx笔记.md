@@ -69,7 +69,7 @@ http {                           																							# HTTP区块开始
     
  server {       
     
-    listen       80；      			        																	# 服务端口，默认80，可自定义配置
+    listen       80；      			      	# 服务端口，默认80，可自定义配置
     server_name  localhost；    																	# 域名主机名
     
 	

@@ -1,28 +1,30 @@
+<!-- @format -->
+
 ### 自定义指令
 
 ##### 1、Vue.directive
 
 > `Vue.directive`方法作用是**注册或者获取全局指令**，而不是让指令生效；
 >
-> 区别： 
+> 区别：
 >
 > - 注册指令需要做的事情是将指令保存在某个位置
 > - 让指令生效是指将指令从某位置拿出来执行它
 
 ##### 2、（自定义）指令怎么生效的
 
-> 模板编译阶段，将指令解析在AST，然后使用AST生成代码字符串的过程，实现自定义指令的功能；
+> 模板编译阶段，将指令解析在 AST，然后使用 AST 生成代码字符串的过程，实现自定义指令的功能；
 >
-> 最后在虚拟DOM渲染过程中触发自定义指令中的钩子函数，使其生效
+> 最后在虚拟 DOM 渲染过程中触发自定义指令中的钩子函数，使其生效
 
-<img src="https://raw.githubusercontent.com/JuntengMa/image/master/202202211830322.png" alt="image-20220221183003249" style="zoom:80%;float:left" />
+<img src="https://raw.githubusercontent.com/tengyuanOasis/image/master/202202211830322.png" alt="image-20220221183003249" style="zoom:80%;float:left" />
 
 > 如图：
 >
 > 1. 在模板解析阶段，会将节点上的指令解析出来并添加到 `AST` 的 `directives`属性中 ；
 > 2. 随后 `directives` 数据会传递到 Vnode 中，接着可以通过 `Vnode.data.directives`获取节点绑定的指令；
-> 3. 最后当虚拟DOM修改时，会根据节点对比触发一些钩子函数；
-> 4. 在diff算法结束后，根据对比结果触发指令的钩子函数==》指令生效
+> 3. 最后当虚拟 DOM 修改时，会根据节点对比触发一些钩子函数；
+> 4. 在 diff 算法结束后，根据对比结果触发指令的钩子函数==》指令生效
 
 ##### 3、钩子(注意顺序，下面即调用顺序)
 
@@ -41,4 +43,3 @@ https://cn.vuejs.org/v2/guide/custom-directive.html
 ##### 4、钩子的区别:
 
 https://segmentfault.com/a/1190000019651831
-
