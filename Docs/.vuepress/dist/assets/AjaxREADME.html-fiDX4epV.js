@@ -1,0 +1,1 @@
+import{_ as e,o as t,c,b as o}from"./app-1sZ14lpL.js";const _={},s=o("p",null,"Ajax",-1),a=[s];function n(r,l){return t(),c("div",null,a)}const f=e(_,[["render",n],["__file","AjaxREADME.html.vue"]]);export{f as default};

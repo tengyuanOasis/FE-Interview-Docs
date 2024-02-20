@@ -1,0 +1,1 @@
+import{_ as e,o as a,c,b as l}from"./app-1sZ14lpL.js";const o={},t=l("p",null,"1、构建速度优化",-1),n=l("ul",null,[l("li",null,"DLL"),l("li",null,"alias"),l("li",null,"happyPack ---> thirdLoader"),l("li",null,"cache-loader"),l("li")],-1),s=[t,n];function _(u,i){return a(),c("div",null,s)}const d=e(o,[["render",_],["__file","webpackyouhua.html.vue"]]);export{d as default};

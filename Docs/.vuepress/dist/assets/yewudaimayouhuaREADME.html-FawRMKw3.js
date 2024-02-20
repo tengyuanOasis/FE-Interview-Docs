@@ -1,0 +1,1 @@
+import{_ as e,o,c as t,b as a}from"./app-1sZ14lpL.js";const c={},_=a("p",null,"业务代码优化",-1),s=[_];function n(r,u){return o(),t("div",null,s)}const d=e(c,[["render",n],["__file","yewudaimayouhuaREADME.html.vue"]]);export{d as default};

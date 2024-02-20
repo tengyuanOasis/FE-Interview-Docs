@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as n,b as c}from"./app-1sZ14lpL.js";const o={},_=c("p",null,"Nginx",-1),s=[_];function r(a,l){return t(),n("div",null,s)}const d=e(o,[["render",r],["__file","NginxREADME.html.vue"]]);export{d as default};

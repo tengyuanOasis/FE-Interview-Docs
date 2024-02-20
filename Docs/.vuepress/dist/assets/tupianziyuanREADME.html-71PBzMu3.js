@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as n,b as c}from"./app-1sZ14lpL.js";const o={},_=c("p",null,"图片资源",-1),a=[_];function s(r,i){return t(),n("div",null,a)}const u=e(o,[["render",s],["__file","tupianziyuanREADME.html.vue"]]);export{u as default};

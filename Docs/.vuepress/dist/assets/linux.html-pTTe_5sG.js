@@ -1,0 +1,1 @@
+import{_ as e,o as n,c as o,b as l}from"./app-1sZ14lpL.js";const t={},s=l("p",null,"常用linux命令",-1),_=l("ol",null,[l("li",null,[l("p",null,"查找js文件")]),l("li",null,[l("p",null,"查找node接口")])],-1),c=[s,_];function u(i,r){return n(),o("div",null,c)}const d=e(t,[["render",u],["__file","linux.html.vue"]]);export{d as default};
