@@ -1,5 +1,0 @@
-* [📂Home](/Docs/README)
-* [Ajax](./Ajax.md)
-* [JsonP](./JsonP.md)
-* [Axios](./Axios.md)
-* [Fetch](./Fetch.md)
