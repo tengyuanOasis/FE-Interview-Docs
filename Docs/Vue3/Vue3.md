@@ -6,8 +6,6 @@
 
 #### composition api
 
-
-
 ##### setup
 
 - setup在组件创建之前执行，props解析完成之后作为组合式api的入口

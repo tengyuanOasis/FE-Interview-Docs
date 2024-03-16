@@ -1,4 +1,21 @@
-<!-- @format -->
+## Diff算法
+
+> 下面是对 Vue 中 diff 算法的详细解释：
+>
+> 1. **虚拟 DOM：** 在 Vue 中，每个组件都有一个对应的虚拟 DOM 树，它是一个轻量级的 JavaScript 对象树，用来描述组件的渲染结果。Vue 使用虚拟 DOM 来代表真实 DOM 树的状态，并通过比较新旧虚拟 DOM 树的差异，最小化对真实 DOM 的操作，从而提高页面的渲染效率。
+> 2. **Diff 算法：** Diff 算法是比较两个虚拟 DOM 树的差异，并找出最小的更新集合，用于更新真实 DOM。Vue 的 Diff 算法采用了一种==深度优先的遍历策略==，具体步骤如下：
+>    - **同级比较：** 首先比较新旧虚拟 DOM 树的根节点；
+>      - 如果根节点相同，则比较它们的子节点；
+>      - 如果根节点不同，则直接替换整个节点及其子树。
+>    - **列表比较：** 在比较列表时，Vue 使用了一种叫做双端比较的策略。
+>      - 它首先会比较列表的头部和尾部，以尽可能地减少对列表的操作。
+>      - 然后，在确定了列表的头部和尾部没有变化后，再对中间的元素进行比较。
+>    - **节点比较：** 在比较节点时，Vue 会先比较节点的标签名和 key（如果有），然后比较节点的属性和事件监听器，最后比较节点的子节点。
+>      - 如果某个节点发生了变化，Vue 会根据变化的类型执行对应的 DOM 操作，比如插入、删除、更新等。
+>    - **递归比较：** 在比较子节点时，Vue 会递归地对子节点进行比较，直到找到最小的更新集合。这样可以确保对整个虚拟 DOM 树进行高效的更新。
+> 3. **优化策略：** Vue 在 Diff 算法中还采用了一些优化策略，以提高性能和减少不必要的操作。比如使用 key 来标识节点，以便重用已有的 DOM 元素；采用双端比较来减少列表的比较次数；对于一些特殊情况，如只有一个子节点或只有文本内容的节点，采用特殊的比较策略等。
+>
+> 总的来说，Vue 的 Diff 算法是一种高效的虚拟 DOM 比较算法，通过对新旧虚拟 DOM 树的差异进行最小化的操作，实现了对真实 DOM 的高效更新，从而提高了页面的渲染效率和性能。
 
 https://juejin.cn/post/6844903607913938951
 
@@ -39,7 +56,7 @@ if (oldVnode.children[2] && oldVnode.children[2].children) {
 }
 ```
 
-​ ![image-20220224113916637](https://raw.githubusercontent.com/tengyuanOasis/image/master/202202241139713.png)
+ ![image-20220224113916637](https://raw.githubusercontent.com/tengyuanOasis/image/master/202202241139713.png)
 
 ### 2、patch 函数
 
@@ -102,7 +119,7 @@ if (oldVnode.children[2] && oldVnode.children[2].children) {
 
 ```js
 /**
- * @description path核心，用于对比新老vnode
+ * @description patch核心，用于对比新老vnode
  * @param {*} oldVnode
  * @param {*} vnode
  * @param {*} insertedVnodeQueue

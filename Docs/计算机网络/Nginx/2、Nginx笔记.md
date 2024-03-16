@@ -48,7 +48,7 @@ https://cloud.tencent.com/developer/article/1801077
 
 ```nginx
 worker_processes  1；                														# worker进程的数量
-error_log  /var/log/nginx/error.log warn;              # 错误日志存放目录
+error_log  /var/log/nginx/error.log warn;              				# 错误日志存放目录
 events {                              																			# 事件区块开始
     worker_connections  1024；          										 # 每个worker进程支持的最大连接数
 }                               																								 # 事件区块结束

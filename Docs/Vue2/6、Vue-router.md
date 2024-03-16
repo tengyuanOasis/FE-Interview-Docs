@@ -57,7 +57,9 @@ router.beforeEach(from , to ,next){ ... }
 
 > 这个钩子和beforeEach类似，也是路由跳转前触发，参数也是to,from,next三个，和beforeEach区别官方解释为：
 >
-> 区别是在导航被确认之前，同时在所有组件内守卫和异步路由组件被解析之后，解析守卫就被调用。 
+> 用于在路由解析完毕，但在路由组件被渲染之前进行操作。
+>
+> 它的作用是在路由解析阶段完成后，但在路由组件实际渲染之前执行一些逻辑操作，比如加载数据、进行权限验证等。
 >
 > 即在 beforeEach 和 组件内beforeRouteEnter 之后，afterEach之前调用。
 >
@@ -72,7 +74,7 @@ router.beforeEach(from , to ,next){ ... }
 ###### 组件内守卫:
 
 ```js
-	beforeRouteEnter(to, from, next) {
+	 beforeRouteEnter(to, from, next) {
 			next();
 			console.log("进入该路由时执行 ");
 		},

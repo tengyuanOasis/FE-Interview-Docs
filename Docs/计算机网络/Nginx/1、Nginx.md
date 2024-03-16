@@ -141,14 +141,14 @@ ln -s /home/nginx/sbin/nginx /usr/local/bin/nginx
 
 ## 四、nginx常用命令
 
-1. 常见2种启动命令
+#### 常见2种启动命令
 
 ```js
 > nginx //直接nginx启动，前提是配好nginx环境变量
 > systemctl start nginx.service //使用systemctl命令启动
 ```
 
-1. 常见的4种停止命令
+#### 常见的4种停止命令
 
 ```js
 > nginx  -s stop //立即停止服务
@@ -157,17 +157,25 @@ ln -s /home/nginx/sbin/nginx /usr/local/bin/nginx
 > systemctl stop nginx.service //systemctl停止
 ```
 
-1. 常见的2种重启命令
+#### 常见的2种重启命令
 
 ```js
 > nginx -s reload //重启nginx
 > systemctl reload nginx.service //systemctl重启nginx
 ```
 
-1. 验证nginx配置文件是否正确
+#### 验证nginx配置文件是否正确
 
 ```js
 > nginx -t //输出nginx.conf syntax is ok即表示nginx的配置文件正确
+```
+
+#### 查看nginx是否正常启动
+
+```shell
+ps -ef | grep nginx
+
+终止进程后，你可以再次运行 ps aux | grep nginx 命令来验证是否成功关闭了所有的 Nginx 进程。确保没有任何与 Nginx 相关的进程正在运行。
 ```
 
 
@@ -185,6 +193,7 @@ events {                              										# 事件区块开始
 }                               															# 事件区块结束
 http {                           													#	 HTTP区块开始
     include       mime.types；         			# Nginx支持的媒体类型库文件
+    include /usr/local/nginx/conf/host/*.conf;
     default_type  application/octet-stream；            # 默认的媒体类型
     sendfile        on；       				# 开启高效传输模式
     keepalive_timeout  65；       			# 连接超时

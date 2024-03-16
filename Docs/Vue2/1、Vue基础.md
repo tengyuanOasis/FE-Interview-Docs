@@ -4,8 +4,9 @@
 
 > Vue 是一套用于构建用户界面的**渐进式框架**
 >
-> **渐进式框架**：Vue.js 只提供了 vue-cli 生态中最核心的**组件系统和双向数据绑定**，不需要一次搞明白整个 Vue 生态，
-> [](https://www.google.com.tw/url?sa=i&url=https%3A%2F%2Fitaigi.tw%2Fk%2F%25E7%25A8%258D%25E7%25AD%2589%25E4%25B8%2580%25E4%25B8%258B%2F&psig=AOvVaw3v28_E8lnjlEMSY6jmTrxg&ust=1641886544958000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCNCv05TWpvUCFQAAAAAdAAAAABAD)
+> **渐进式框架**：Vue.js 只提供了 vue-cli 生态中最核心的**组件系统和双向数据绑定**，不需要一次搞明白整个 Vue 生态。
+>
+> 可以按需引入，如刚开始只需要vue基础包，随着项目增大，需要逐步加入vue-router、vuex等其他库
 
 ##### 2、Vue 优缺点
 
@@ -40,7 +41,7 @@
 
 ```vue
 <el-button
-	:key="item.label"
+	:key="item.label" 
 	v-if="item.disabled !== true"
 	style="margin: 0 5px"
 	v-bind="item.data"
@@ -60,18 +61,22 @@ data:{
 
 ##### 6、Vue 修饰符
 
-<img src="https://raw.githubusercontent.com/tengyuanOasis/image/master/image-20211104102810965.png" alt="image-20211104102810965" style="zoom:80%;border-radius:20px" />
+![image-20240314000041241](https://raw.githubusercontent.com/tengyuanOasis/image/master/Vue修饰符.png)
+
+![image-20240314000041241](https://raw.githubusercontent.com/tengyuanOasis/image/master/image/202403140000276.png)
 
 ##### 7、Vue 内置指令
 
 > https://cn.vuejs.org/v2/api/#v-text
+
+![image-20240314001359404](https://raw.githubusercontent.com/tengyuanOasis/image/master/image/202403140014262.png)
 
 ##### 8、组件之间的传值方式有哪些？
 
 > 1、父传子：
 >
 > - 子组件用 props 接收
-> - [provide-inject 传递](https://cn.vuejs.org/v2/api/#provide-inject)
+> - [provide-inject 传递](https://v2.cn.vuejs.org/v2/api/#provide-inject)
 
 > 2、子传父：
 >
@@ -142,11 +147,18 @@ data:{
 
 ##### 12、Vue 响应式数据理解
 
-> Vue 响应式数据核心是运用了`Objec.defineProperty()`
+> Vue 响应式数据核心是运用了`Objec.defineProperty()` ， 当把 js 对象传入 Vue 实例的 data，Vue 会遍历这个对象所有`property` , 
 >
-> 当把 js 对象传入 Vue 实例的 data，Vue 会遍历这个对象所有`property` , `Objec.defineProperty()`把所有的`property`都转为`getter / setter` , 使`property` 在被访问或修改的时候通知变更，然后 view 更新
+> `Objec.defineProperty()`把所有的`property`都转为`getter / setter` , 使`property` 在被访问或修改的时候通知变更，然后 view 更新
 >
-> ![image-20211027170239541](https://raw.githubusercontent.com/tengyuanOasis/image/master/image-20211027170239541.png)
+> Vue 数据双向绑定原理是通过 `数据劫持` + `发布者-订阅者模式` 的方式来实现的，首先是通过 `ES5` 提供的 `Object.defineProperty()` 方法来劫持（监听）各属性的 **getter、setter**，并在当监听的属性发生变动时通知订阅者，是否需要更新，若更新就会执行对应的更新函数。
+>
+> 常见的`基于数据劫持`的**双向绑定**有两种实现
+>
+> - 一个是Vue2.x在用的 `Object.defineProperty`
+> - 一个是ES2015中新增的 `Proxy`，而在Vue3.0版本后加入Proxy从而代替Object.defineProperty
+>
+> ![image-20240314145831197](https://raw.githubusercontent.com/tengyuanOasis/image/master/image/202403141458015.png)
 >
 > https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A6%82%E4%BD%95%E8%BF%BD%E8%B8%AA%E5%8F%98%E5%8C%96
 
@@ -205,7 +217,7 @@ data () {
 
 > **1. 语法**：
 >
-> ​ `<slot name="xxxx"></slot>`
+>  `<slot name="xxxx"></slot>`
 >
 > **2. 使用**：
 >
@@ -215,7 +227,7 @@ data () {
 >   <p> 
 >       	// 内容插入这里
 >       	👉<slot name="slot-test">我是插槽默认值，在没有传递数据的时候显示</slot>👈 
->     </p>
+>   </p>
 >   ```
 >
 > - 2.6.0 版本前
@@ -275,7 +287,20 @@ inject: {
 
 子组件创建时间： 父组件`beforeMounted` 和 `Mounted`之间
 
-<img src="https://raw.githubusercontent.com/tengyuanOasis/image/master/image-20211213164116578.png" alt="image-20211213164116578" style="zoom:80%; float:left" />
+> 总结：
+>
+> 执行的先后顺序为 父beforeCreate->父created->父beforeMount->子beforeCreate->子created->子beforeMount->子mounted->父mounted 。
+>
+> ##### 为什么这么设计？
+>
+> 一、父子组件异步传值的坑
+>
+> 子组件的生命周期只会执行一次，但是当子组件渲染的时候父组件的数据还没接受完就会造成子组件没有任何内容渲染。
+>
+> 二、解决父子组件异步传值的方法
+>
+> 1. 给子组件添加渲染条件，使用v-if，当父组件数据接收完毕后在渲染子组件。
+> 2. 在子组件中添加watch监听，当父组件数据传输过来时，改变原有的默认数据，重新渲染页面。
 
 代码： https://raw.githubusercontent.com/tengyuanOasis/Vue-test/blob/main/learn-LifeCycle/index.html
 
@@ -305,8 +330,8 @@ props: {
     num: {
       default: 1,
       validator: function (value) {
-          // 返回值为true则验证不通过，报错
-          return [1, 2, 3, 4, 5].indexOf(value) !== -1
+        // 返回值为true则验证不通过，报错
+        return [1, 2, 3, 4, 5].indexOf(value) !== -1
     	}
     }
 }
@@ -469,7 +494,7 @@ filters: {
 
   ```vue
   <div ref="testDiv">{{name}}</div>
-
+  
   name: '小林' this.name = '林三心' console.log(this.$refs.testDiv.innerHTML) // 小林
   this.$nextTick(() => { console.log(this.$refs.testDiv.innerHTML) // 林三心 })
   ```
@@ -604,15 +629,143 @@ https://juejin.cn/post/6984210440276410399#heading-55
 
 > https://juejin.cn/post/6844903837770203144
 
-为什么 vue 先初始化 mixin
+##### 38、为什么 vue 先初始化 mixin
 
-methods 为什么比 data 更早初始化
+>
+> 在 Vue 中，mixin 是一种重用 Vue 组件选项的机制。当你使用 mixin 将选项混入到组件中时，这些选项会在组件实例化之前被合并到组件的选项中，然后应用到组件实例中。
+>
+> 因此，Vue 先初始化 mixin 的原因主要是为了确保 mixin 中定义的选项能够在组件实例化之前被合并到组件选项中，以确保组件实例化时能够正常地应用这些选项。
+>
+> 另外，Vue 会在应用 mixin 时进行选项的合并，这意味着如果 mixin 中的选项与组件自身的选项发生了冲突，Vue 会进行适当的合并或覆盖，以确保组件能够正常工作。因此，在初始化 mixin 时，Vue 需要先处理 mixin 中的选项，然后再处理组件自身的选项，以确保 mixin 中的选项能够正确地被应用到组件中。
+>
+> 综上所述，Vue 先初始化 mixin 主要是为了确保 mixin 中的选项能够在组件实例化之前被正确地合并和应用到组件中，以保证组件的正常工作。
 
-为什么 vue 中可以直接用 this 调用 methods
+##### 39、为什么 vue 中可以直接用 this 调用 methods
 
-通过 bind 改变 function 的 this 指向
+>
+> 在 Vue 中，组件实例的方法（即 `methods` 中定义的方法）是可以通过 `this` 直接调用的。
+>
+> 这是因为 Vue 在组件实例化过程中会将 `methods` 中的方法绑定到组件实例上，使得这些方法可以在组件实例中被直接访问和调用。
+>
+> 具体来说，当 Vue 实例化一个组件时，会将组件的选项合并到一个新的 Vue 实例中，然后创建这个 Vue 实例的实例对象。在这个过程中，Vue 会将 `methods` 中定义的方法绑定到实例对象上，因此在组件实例中就可以通过 `this` 直接访问和调用这些方法。
+>
+> 这种机制使得在组件的模板中可以直接调用组件实例的方法，从而方便地实现模板和方法之间的交互。例如，在组件的模板中可以通过 `@click` 等指令直接调用组件实例的方法来处理用户的点击事件。
+>
+> 总的来说，Vue 中可以直接通过 `this` 调用 `methods` 中定义的方法，是因为 Vue 在组件实例化过程中会将这些方法绑定到组件实例上，使得它们可以在组件实例中被直接访问和调用。
+
+##### 41、通过 bind 改变 function 的 this 指向
 
 ```js
 //源码：
 vm[key] = typeof methods[key] !== 'function' ? noop : bind(methods[key], vm);
 ```
+
+##### 42、 vue源码中，Observer类都做了哪些事情
+
+> 在Vue.js中，`Observer`类主要负责实现数据的响应式化。具体而言，`Observer`类会做以下几件事情：
+>
+> 1. 递归地遍历对象的每个属性，并使用`Object.defineProperty`或`Proxy`等技术在属性上设置getter和setter，以便在属性被访问或修改时能够触发相应的依赖收集和更新操作。
+> 2. 为对象中的每个可响应的属性创建对应的依赖收集器（`Dep`），用于收集依赖和触发更新。
+> 3. 当对象的属性是数组时，会对数组的方法进行重写，以便在数组发生变化时能够触发相应的依赖更新。
+>
+> 总的来说，`Observer`类是Vue.js实现响应式系统的核心之一，它通过递归遍历对象并设置getter和setter，以及创建对应的依赖收集器，实现了数据的响应式化。
+>
+> ```javascript
+> //1、Observer类负责观察数据对象，根据数据类型调用walk或observeArray方法。
+> class Observer {
+>   constructor(value) {
+>     this.value = value;
+>     if (Array.isArray(value)) {
+>       //2、observeArray方法用于遍历数组并对数组中的每个元素调用observe方法。
+>       this.observeArray(value);
+>     } else {
+>       //3、walk方法遍历对象的每个属性并调用defineReactive方法设置getter和setter。
+>       this.walk(value);
+>     }
+>   }
+> 	
+>   
+>   walk(obj) {
+>     Object.keys(obj).forEach(key => {
+>       defineReactive(obj, key, obj[key]);
+>     });
+>   }
+> 
+>   observeArray(arr) {
+>     arr.forEach(item => {
+>       observe(item);
+>     });
+>   }
+> }
+> 
+> function defineReactive(obj, key, val) {
+>   let dep = new Dep();
+>   Object.defineProperty(obj, key, {
+>     enumerable: true,
+>     configurable: true,
+>     get: function reactiveGetter() {
+>       // 依赖收集
+>       if (Dep.target) {
+>         dep.depend();
+>       }
+>       return val;
+>     },
+>     set: function reactiveSetter(newVal) {
+>       if (newVal === val) {
+>         return;
+>       }
+>       val = newVal;
+>       // 触发依赖更新
+>       dep.notify();
+>     }
+>   });
+> }
+> 
+> // 4、observe方法用于判断数据类型并实例化Observer对象。
+> function observe(value) {
+>   if (!value || typeof value !== 'object') {
+>     return;
+>   }
+>   return new Observer(value);
+> }
+> // 5、Dep类用于管理依赖，addSub方法用于添加订阅者，depend方法用于依赖收集，notify方法用于触发更新。
+> class Dep {
+>   constructor() {
+>     this.subs = [];
+>   }
+> 
+>   addSub(sub) {
+>     this.subs.push(sub);
+>   }
+> 
+>   depend() {
+>     if (Dep.target) {
+>       Dep.target.addDep(this);
+>     }
+>   }
+> 
+>   notify() {
+>     this.subs.forEach(sub => {
+>       sub.update();
+>     });
+>   }
+> }
+> 
+> //6、Dep.target用于存储当前的观察者对象，在依赖收集时使用
+> Dep.target = null;
+> ```
+>
+> 
+
+#### 43、Key作用
+
+> 在 Vue 中，`key` 是用来标识 VNode 的特殊属性，具有以下作用：
+>
+> 1. **唯一性标识：** `key` 用于标识 VNode 的唯一性，确保在 Virtual DOM 中的列表渲染中能够准确地找到每个节点，并正确地进行比对和更新。
+> 2. **优化列表渲染：** 在使用 `v-for` 进行列表渲染时，Vue 使用 `key` 来判断每个节点的身份。当列表发生变化时，Vue 会尽可能地复用已有的 DOM 元素，而不是创建新的元素或者销毁已有的元素，从而提高渲染性能。
+> 3. **解决列表渲染时的问题：** 在没有使用 `key` 的情况下，如果列表中的项发生了位置变化、增加或删除等操作，可能会导致 Vue 无法正确地识别每个节点的身份，从而引发错误的渲染结果或者性能下降。
+> 4. **配合动画效果：** 在列表渲染中，配合过渡或者动画效果使用 `key` 可以实现更流畅的过渡效果。Vue 可以根据 `key` 的变化，精准地追踪节点的增加、删除、移动等操作，从而实现更精细的动画控制。
+>
+> `key` 在何时生效取决于具体的使用场景，主要包括列表渲染、动态组件等情况。在这些情况下，Vue 会根据 `key` 属性来判断节点的唯一性，并根据需要进行 DOM 的复用或者更新。因此，合理地使用 `key` 可以帮助我们提高页面的渲染性能，避免出现不必要的问题。
+>
+> ## `key` 属性在 Vue 的 Virtual DOM Diff 算法中是非常重要的，它能够帮助 Vue 精准地识别节点的唯一性，从而实现高效的列表渲染和 DOM 更新。因此，在进行列表渲染时，应该合理地为每个节点添加唯一的 `key` 属性，以确保 Vue 能够正确地进行节点的比对和更新。

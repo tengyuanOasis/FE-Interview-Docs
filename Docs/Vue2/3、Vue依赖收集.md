@@ -40,16 +40,16 @@ new Vue({
 定义一个依赖收集类Dep。
 
 ```js
-   class Dep {
-	constructor() {
-		this.subs = [];
-	}
-	addSub(sub: Watcher) {
-		this.subs.push(sub);
-	}
-	removeSub(sub: Watcher) {
-		remove(this.subs, sub);
-	}
+class Dep {
+  constructor() {
+    this.subs = [];
+  }
+  addSub(sub: Watcher) {
+    this.subs.push(sub);
+  }
+  removeSub(sub: Watcher) {
+    remove(this.subs, sub);
+  }
 	/*Github:https://raw.githubusercontent.com/answershuto*/
 	notify() {
 		// stabilize the subscriber list first

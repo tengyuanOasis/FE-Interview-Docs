@@ -4,7 +4,6 @@
 
 ![](https://upload-images.jianshu.io/upload_images/19956127-e3d2b4c74a2b2eb7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
 ## 001\. HTTP 报文结构是怎样的？
 
 对于 TCP 而言，在传输的时候分为两个部分:**TCP头**和**数据部分**。
