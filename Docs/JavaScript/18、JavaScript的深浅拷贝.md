@@ -63,7 +63,47 @@
 - 实现深拷贝：
 
   ```js
+  function deepCopy(obj, cache = new Map()) {
+    // 如果 obj 是 null 或者不是一个对象，则直接返回 obj
+    if (obj === null || typeof obj !== 'object') {
+      return obj;
+    }
+  
+    // 检查是否存在循环引用
+    if (cache.has(obj)) {
+      return cache.get(obj);
+    }
+  
+    // 创建一个空对象或数组，用于存储拷贝后的值
+    const copy = Array.isArray(obj) ? [] : {};
+  
+    // 将当前对象引用存储到缓存中
+    cache.set(obj, copy);
+  
+    // 遍历原对象的所有属性或元素，并进行递归拷贝
+    for (let key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        copy[key] = deepCopy(obj[key], cache);
+      }
+    }
+  
+    return copy;
+  }
+  ```
+  
+  示例：
+
+  ```javascript
+  const obj1 = { name: 'John' };
+  const obj2 = { name: 'Doe' };
+  
+  // 创建循环引用
+  obj1.ref = obj2;
+  obj2.ref = obj1;
+  
+  const obj3 = deepCopy(obj1);
+  
+  console.log(obj3);
   
   ```
 
-  

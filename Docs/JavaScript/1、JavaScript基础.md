@@ -39,7 +39,7 @@ JavaScript 基础
   >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
   >      let sym = Symbol();
   >      console.log(typeof sym); // symbol
-  >                   
+  >                       
   >       //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
   >      let genericSymbol = Symbol();
   >      let otherGenericSymbol = Symbol();
@@ -121,13 +121,13 @@ JavaScript 基础
 >
 >   ```javascript
 >   栈内存中的“后进先出”（LIFO，Last In First Out）是一种数据结构的特性，指的是最后进入栈的元素最先被取出。
->           
+>             
 >   在栈（Stack）数据结构中，元素的插入和删除操作都发生在栈顶（top）位置。当一个新元素被插入到栈中时，它会被放置在栈顶的位置；而当要删除元素时，总是从栈顶开始删除。
->           
+>             
 >   下面用一个简单的例子来解释“后进先出”：
->           
+>             
 >   假设有一个栈，开始时是空的。我们按照以下步骤进行操作：
->           
+>             
 >   元素 A 入栈：栈中变为 A
 >   元素 B 入栈：栈中变为 B, A
 >   元素 C 入栈：栈中变为 C, B, A
@@ -808,3 +808,26 @@ Promise.all([p1, p2, p3]);
    - ES Module 支持循环依赖检测，而 CommonJS 不支持。
 
 在实际开发中，根据项目的特点和环境选择合适的模块引入方式是很重要的。在现代的前端项目中，通常会使用 ES Module，而在 Node.js 项目中则会使用 CommonJS。
+
+
+
+#### 24、window.onerror可以捕获到 promise以外的错误
+
+> `window.onerror` 是 JavaScript 中用于全局捕获运行时错误的事件处理函数。它可以捕获到整个文档中发生的错误，包括但不限于 Promise 中的错误。
+>
+> 当发生未被捕获的错误时，`window.onerror` 会被触发，你可以在这个事件处理函数中处理错误信息。这个事件处理函数接收四个参数：错误消息、URL、行号和列号。其中，错误消息和 URL 是必须的，行号和列号是可选的。
+>
+> 以下是一个示例：
+>
+> ```
+> javascriptCopy code
+> window.onerror = function(message, source, lineno, colno, error) {
+>   console.error('Error:', message, 'at', source, 'line', lineno, 'column', colno);
+> };
+> ```
+>
+> 在这个示例中，如果任何未被捕获的错误发生，都会触发 `window.onerror`，然后在控制台打印错误信息、出错的文件、行号和列号。
+>
+> 需要注意的是，`window.onerror` 只能捕获到同源的 JavaScript 运行时错误，无法捕获到跨域脚本中的错误、语法错误以及资源加载错误等。对于跨域脚本中的错误，你可以使用 `window.addEventListener('error', handler)` 事件来捕获。
+>
+> 另外，对于 Promise 中的错误，如果没有显示地使用 `try...catch` 进行捕获，那么这些错误也会被 `window.onerror` 捕获到。因此，`window.onerror` 可以用来捕获到 Promise 以外的错误。

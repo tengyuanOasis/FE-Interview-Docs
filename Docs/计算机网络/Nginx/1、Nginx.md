@@ -1,6 +1,10 @@
 [nginx基础知识](https://juejin.cn/post/7007346707767754765?utm_source=gold_browser_extension#heading-18)
 
-[参考资料](https://juejin.cn/post/7064378702779891749?utm_source=gold_browser_extension)
+[参考资料]()
+
+- https://juejin.cn/post/7064378702779891749?utm_source=gold_browser_extension
+
+- https://zhuanlan.zhihu.com/p/120974120
 
 ## 一、Nginx是什么？
 
