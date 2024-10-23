@@ -39,7 +39,7 @@ JavaScript 基础
   >      //符号需要使用Symbol()函数初始化。因为符号本身是原始类型，所以typeof操作符对符号返回symbol。
   >      let sym = Symbol();
   >      console.log(typeof sym); // symbol
-  >                       
+  >                           
   >       //调用Symbol()函数时，也可以传入一个字符串参数作为对符号的描述（description），将来可以通过这个字符串来调试代码。但是，这个字符串参数与符号定义或标识完全无关：
   >      let genericSymbol = Symbol();
   >      let otherGenericSymbol = Symbol();
@@ -121,13 +121,13 @@ JavaScript 基础
 >
 >   ```javascript
 >   栈内存中的“后进先出”（LIFO，Last In First Out）是一种数据结构的特性，指的是最后进入栈的元素最先被取出。
->             
+>               
 >   在栈（Stack）数据结构中，元素的插入和删除操作都发生在栈顶（top）位置。当一个新元素被插入到栈中时，它会被放置在栈顶的位置；而当要删除元素时，总是从栈顶开始删除。
->             
+>               
 >   下面用一个简单的例子来解释“后进先出”：
->             
+>               
 >   假设有一个栈，开始时是空的。我们按照以下步骤进行操作：
->             
+>               
 >   元素 A 入栈：栈中变为 A
 >   元素 B 入栈：栈中变为 B, A
 >   元素 C 入栈：栈中变为 C, B, A

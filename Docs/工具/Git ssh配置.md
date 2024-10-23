@@ -56,8 +56,6 @@ $ ssh-keygen -t rsa -C 'xxxxx@company.com' -f ~/.ssh/gitlab_id_rsa
 Saving key “~/.ssh/gitee_id” failed: No such file or directory 
 ```
 
-
-
 #### 2、git 平台设置中
 
 将 .pub 文件中内容复制到相应的平台 SSH 设置中，例如：
@@ -71,24 +69,24 @@ gitee_id_rsa.pub 中的文件内容复制到码云的 SSH 公钥中。
 ```
 # gitee
 
-Host raw.githubusercontent.com
-HostName raw.githubusercontent.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/gitee_id_rsa
+Host gitee.com
+   HostName gitee.com
+   User git
+   IdentityFile ~/.ssh/gitee_id_rsa
 
 # github
 
-Host raw.githubusercontent.com
-HostName raw.githubusercontent.com
-PreferredAuthentications publickey
-IdentityFile ~/.ssh/github_id_rsa
+Host github.com
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/github_id_rsa
 
 # gitlab
 
 Host xxxx.com
 HostName xxxx.com
 PreferredAuthentications publickey
-IdentityFile ~/.ssh/gitlab_id_rsa
+IdentityFile ~/.ssh/xxxx_id_rsa
 
 ```
 
@@ -100,8 +98,8 @@ IdentityFile ~/.ssh/gitlab_id_rsa
 用 ssh 命令分别测试，@后面跟着的是域名
 
 ```
-$ ssh -T git@raw.githubusercontent.com
-$ ssh -T git@raw.githubusercontent.com
+
+$ ssh -T git@github.com
 $ ssh -T git@xxxx.com
 ```
 

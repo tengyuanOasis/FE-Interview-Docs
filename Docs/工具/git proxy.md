@@ -3,11 +3,12 @@
 ## 分辨需要设置的代理
 
 - HTTP 形式：
-   > git clone https://github.com/owner/git.git
+  > git clone https://github.com/owner/git.git
 - SSH 形式：
-   > git clone git@github.com:owner/git.git
+  > git clone git@github.com:owner/git.git
 
 ## 一、HTTP 形式
+
 ### 走 HTTP 代理
 
 ```bash
