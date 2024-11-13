@@ -14,11 +14,10 @@ permalink:
 
 <!--more-->
 
-一般情况下，当有多个 git 账号，如果没有咧，都去尝试一下，例如：
+一般情况下，当有一台电脑需要多个 git 账号，提交人就会有问题，例如：
 
-- gitee 账号，国产 github，码云值得拥有
-- github 账号，全球最大同性交友网站
-- gitlab 账号，公司内部的工作开发
+- github 账号
+- gitlab 账号
 
 **解决方案**
 
@@ -68,22 +67,19 @@ gitee_id_rsa.pub 中的文件内容复制到码云的 SSH 公钥中。
 
 ```
 # gitee
-
 Host gitee.com
    HostName gitee.com
    User git
    IdentityFile ~/.ssh/gitee_id_rsa
 
 # github
-
 Host github.com
    HostName github.com
    User git
    IdentityFile ~/.ssh/github_id_rsa
 
 # gitlab
-
-Host xxxx.com
+Host xxxx.com #公司gitlab地址
 HostName xxxx.com
 PreferredAuthentications publickey
 IdentityFile ~/.ssh/xxxx_id_rsa
@@ -93,17 +89,17 @@ IdentityFile ~/.ssh/xxxx_id_rsa
 其中 Host 和 HostName 填写 git 服务器的域名，IdentityFile 指定私钥的路径。
 实在不晓得 Host 和 HostName 怎么填的呢，譬如不知道公司内部的服务器域名，可以在 known_hosts 文件中查看。
 
-#### 4、测试是否联通
+#### 4、测试是否连通
 
 用 ssh 命令分别测试，@后面跟着的是域名
 
 ```
-
 $ ssh -T git@github.com
-$ ssh -T git@xxxx.com
+$ ssh -T git@gitee.com
+$ ssh -T git@公司私有域名或IP地址
 ```
 
 You've successfully authenticated, but GitHub does not provide shell access.
 
-当出现这句话的时候说明你已经配置完成啦
+当出现这句话的时候说明你已经配置完成啦，然后就可以快乐coding喽~
 
